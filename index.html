@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="all" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2942377823299851" crossorigin="anonymous"></script>
+<link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#059669"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Nutri Hub"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><title>Nutri Hub – Recipes & Workouts</title>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#f6f7f5;--sf:#fff;--tx:#0f172a;--mu:#64748b;--ln:#e2e8f0;--ac:#0d9488;--ai:#fff}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+:root[data-theme=vegan]{--ac:#059669}
+:root[data-theme=omni]{--ac:#b45309;--bg:#f4f2ee;--ln:#e2dfd8}
+:root[data-mode=dark]{--bg:#0f172a;--sf:#1e293b;--tx:#e2e8f0;--mu:#94a3b8;--ln:#334155;--ac:#2dd4bf;--ai:#042f2e}
+:root[data-mode=dark][data-theme=vegan]{--ac:#34d399;--ai:#052e16}
+:root[data-mode=dark][data-theme=omni]{--ac:#fbbf24;--ai:#1c1917}
+body,.sf,.card,input,select,textarea,.chip,.seg{transition:background-color .45s,color .45s,border-color .45s}
+@keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes glow{0%,100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--ac) 50%,transparent)}60%{box-shadow:0 0 0 8px transparent}}
+@keyframes pop{50%{transform:scale(1.14)}}
+.card{animation:up .45s backwards}#mbox{animation:up .3s}.up{animation:up .4s backwards}
+.sw{width:3.5rem;height:1.9rem;border-radius:99px;background:var(--ln);position:relative;flex-shrink:0;animation:glow 2.4s infinite;transition:background .3s}
+.sw::after{content:"";position:absolute;top:.2rem;left:.2rem;width:1.5rem;height:1.5rem;border-radius:50%;background:#fff;transition:transform .3s}
+.sw.on{background:var(--ac);animation:none}.sw.on::after{transform:translateX(1.6rem)}
+.pop{animation:pop .4s}.dot{width:.45rem;height:.45rem;border-radius:50%;background:currentColor;display:inline-block;margin-left:.2rem;animation:glow 2s infinite}
+.ck{width:1.1rem;height:1.1rem;accent-color:var(--ac)}.dn{text-decoration:line-through;opacity:.5}
+.zoom{cursor:pointer;overflow:hidden}.zoom .emo{transition:transform .35s;display:inline-block}.zoom:hover .emo,.zoom:focus-visible .emo{transform:scale(1.28) rotate(-6deg)}.zoom:active{filter:brightness(.92)}
+.zoom .tap{position:absolute;bottom:.5rem;left:50%;transform:translate(-50%,8px);opacity:0;transition:all .25s;font-size:.7rem;font-weight:600;background:rgba(0,0,0,.6);color:#fff;padding:.2rem .7rem;border-radius:99px;white-space:nowrap}.zoom:hover .tap,.zoom:focus-visible .tap{opacity:1;transform:translate(-50%,0)}
+@media (hover:none){.zoom .tap{opacity:1;transform:translate(-50%,0)}}
+html{font-size:112.5%}html.big{font-size:131%}
+:root{--bgi:radial-gradient(900px 520px at 8% -8%,color-mix(in srgb,var(--ac) 26%,transparent),transparent),radial-gradient(800px 520px at 100% 8%,color-mix(in srgb,#f59e0b 24%,transparent),transparent),radial-gradient(800px 520px at 55% 112%,color-mix(in srgb,#ec4899 14%,transparent),transparent)}
+:root[data-mode=dark]{--bgi:radial-gradient(900px 520px at 8% -8%,color-mix(in srgb,var(--ac) 16%,transparent),transparent),radial-gradient(700px 500px at 100% 100%,color-mix(in srgb,#6366f1 12%,transparent),transparent)}
+header{border-bottom:3px solid transparent;border-image:linear-gradient(90deg,var(--ac),#f59e0b,#ec4899) 1}
+#ttl{background:linear-gradient(90deg,var(--ac),#f59e0b 70%,#ec4899);-webkit-background-clip:text;background-clip:text;color:transparent;font-size:2.4rem}
+.card{border-top:5px solid var(--ac);box-shadow:0 10px 24px -14px rgba(15,23,42,.35)}
+.sf{box-shadow:0 8px 20px -14px rgba(15,23,42,.3)}
+.mac:nth-child(1){background:color-mix(in srgb,#22c55e 20%,var(--sf))}.mac:nth-child(2){background:color-mix(in srgb,#f59e0b 22%,var(--sf))}.mac:nth-child(3){background:color-mix(in srgb,#ec4899 18%,var(--sf))}
+.btn{padding:.7rem 1.1rem;font-size:1rem;border-radius:.9rem}.chip{font-size:.95rem;padding:.5rem 1rem}.b{font-size:.78rem;padding:.2rem .65rem}.mac{font-size:.82rem}.mac b{font-size:1.15rem}
+input,select,textarea{font-size:1rem}input,select{padding:.75rem 1rem}.seg button{font-size:1rem;padding:.55rem 1.1rem}
+.hero{height:10.5rem}
+.plate{position:relative;width:7.6rem;height:7.6rem;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#f1f5f9 70%,#cbd5e1);box-shadow:inset 0 0 0 .5rem rgba(255,255,255,.7),0 14px 22px -6px rgba(0,0,0,.5);display:grid;place-items:center;font-size:4rem}
+.plate i{position:absolute;font-style:normal;font-size:1.9rem;filter:drop-shadow(0 2px 2px rgba(0,0,0,.35));animation:float 3s ease-in-out infinite}
+.plate i:nth-of-type(1){top:-.7rem;left:-.5rem}.plate i:nth-of-type(2){bottom:-.5rem;right:-.6rem;animation-delay:-1s}.plate i:nth-of-type(3){top:.1rem;right:-.9rem;animation-delay:-2s}
+@keyframes float{50%{transform:translateY(-6px) rotate(8deg)}}
+.cartb{position:fixed;right:1rem;z-index:45;width:4.5rem;height:4.5rem;border-radius:50%;border:0;font-size:2.2rem;color:#fff;background:linear-gradient(135deg,var(--ac),#f97316);box-shadow:0 12px 26px -6px rgba(0,0,0,.5);display:grid;place-items:center;animation:roll 5s infinite}
+.cartb b{position:absolute;top:-.2rem;right:-.2rem;min-width:1.8rem;height:1.8rem;border-radius:99px;background:#ef4444;color:#fff;font-size:.95rem;display:grid;place-items:center;padding:0 .3rem}
+.cartb.bump{animation:bump .55s}
+@keyframes roll{0%,88%,100%{transform:none}92%{transform:rotate(-10deg) translateX(-3px)}96%{transform:rotate(8deg) translateX(3px)}}
+@keyframes bump{30%{transform:scale(1.3) rotate(-12deg)}60%{transform:scale(.92) rotate(8deg)}}
+.tile{display:flex;flex-direction:column;align-items:center;gap:.25rem;padding:.7rem .3rem;border-radius:1rem;border:1px solid var(--ln);background:var(--sf);font-size:.85rem;font-weight:500;text-align:center;line-height:1.15;transition:all .2s}
+.tile:hover{transform:translateY(-3px);border-color:var(--ac);box-shadow:0 8px 16px -8px rgba(0,0,0,.35)}.tile:active{transform:scale(.94)}
+.ti{font-size:2.3rem;line-height:1}
+.gico{width:3.2rem;height:3.2rem;flex-shrink:0;border-radius:1rem;display:grid;place-items:center;font-size:1.9rem;background:color-mix(in srgb,var(--ac) 16%,var(--sf))}
+body{background-attachment:scroll}
+.card{content-visibility:auto;contain-intrinsic-size:auto 430px}
+.plate i{animation:none}.card:hover .plate i{animation:float 1.8s ease-in-out infinite}
+header{backdrop-filter:none;background:var(--bg)}
+.cartb{animation:none}.cartb:hover{animation:roll 1s}
+.sw.q{animation:none}
+.glass .sw{width:4.2rem;height:2.3rem;background:color-mix(in srgb,var(--tx) 16%,transparent);box-shadow:inset 0 1px 4px rgba(0,0,0,.28);animation:none;transition:background .35s}
+.glass .sw:not(.q):not(.on){animation:glow 2.4s infinite}
+.glass .sw.on{background:var(--ac)}
+.glass .sw::after{top:.17rem;left:.2rem;width:2.4rem;height:1.96rem;border-radius:99px;background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(255,255,255,.72));-webkit-backdrop-filter:blur(6px) saturate(1.8);backdrop-filter:blur(6px) saturate(1.8);box-shadow:0 3px 9px rgba(0,0,0,.3),inset 0 1.5px 1px rgba(255,255,255,.95),inset 0 -2px 5px rgba(0,0,0,.1),inset 0 0 0 1px rgba(255,255,255,.55);transition:transform .55s cubic-bezier(.34,1.56,.64,1),width .25s ease,background .25s,box-shadow .25s}
+.glass .sw.on::after{transform:translateX(1.4rem)}
+.glass .sw:active::after{width:3rem;background:linear-gradient(180deg,rgba(255,255,255,.6),rgba(255,255,255,.28));box-shadow:0 6px 16px rgba(0,0,0,.35),inset 0 2px 2px rgba(255,255,255,1),inset 0 -3px 6px rgba(255,255,255,.35),inset 0 0 0 1.5px rgba(255,255,255,.8)}
+.glass .sw.on:active::after{transform:translateX(.8rem)}
+.noanim *,.noanim *::before,.noanim *::after{animation:none!important;transition:none!important}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+body{background-color:var(--bg);background-image:var(--bgi);background-attachment:fixed;color:var(--tx);font-family:Inter,system-ui,sans-serif;transition:background .4s}
+.fd{font-family:Fraunces,Georgia,serif}.mu{color:var(--mu)}
+.sf{background:var(--sf);border:1px solid var(--ln)}
+.ac{color:var(--ac)}.bac{background:var(--ac);color:var(--ai)}
+.soft{background:color-mix(in srgb,var(--ac) 14%,transparent)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--ln)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:31;background:var(--bg)}
+.seg{display:inline-flex;padding:3px;border-radius:999px;background:var(--sf);border:1px solid var(--ln)}
+.seg button{padding:.4rem .9rem;border-radius:999px;font-size:.85rem;font-weight:600;color:var(--mu);transition:all .25s}
+.seg button.on{background:var(--ac);color:var(--ai)}
+.chip{padding:.35rem .8rem;border-radius:999px;font-size:.8rem;font-weight:500;border:1px solid var(--ln);background:var(--sf);transition:all .2s;white-space:nowrap}
+.chip:hover{border-color:var(--ac)}.chip.on{background:var(--ac);color:var(--ai);border-color:var(--ac)}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:1.1rem;overflow:hidden;transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px -14px rgba(0,0,0,.35)}
+.hero{height:7rem;display:flex;align-items:center;justify-content:center;position:relative;font-size:3.4rem}
+.hero .time{position:absolute;right:.6rem;top:.6rem;font-size:.72rem;background:rgba(0,0,0,.45);color:#fff;padding:.15rem .5rem;border-radius:999px}
+.b{font-size:.68rem;font-weight:600;padding:.12rem .55rem;border-radius:999px;color:#1f2937}
+.b-vegan{background:#a7f3d0;color:#065f46}.b-veg{background:#fef08a;color:#854d0e}.b-meat{background:#fecaca;color:#991b1b}
+.b-sea{background:#bae6fd;color:#075985}.b-df{background:#e9d5ff;color:#6b21a8}.b-gf{background:#fed7aa;color:#9a3412}.b-lv{background:#e2e8f0;color:#334155}
+.mac{flex:1;text-align:center;padding:.4rem 0;border-radius:.7rem;background:var(--bg);font-size:.72rem}.mac b{display:block;font-size:.95rem}
+.btn{padding:.55rem .9rem;border-radius:.7rem;font-weight:600;font-size:.85rem;transition:all .2s}
+.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn-o{border:1px solid var(--ln);background:var(--sf)}.btn-o:hover{border-color:var(--ac)}
+.bar{height:.55rem;border-radius:99px;background:var(--ln);overflow:hidden}.bar i{display:block;height:100%;background:var(--ac);border-radius:99px;transition:width .5s}.bar i.over{background:#ef4444}
+input,select{background:var(--sf);border:1px solid var(--ln);border-radius:.8rem;padding:.6rem .9rem;color:var(--tx);outline:none;font-size:.9rem}
+input:focus,select:focus{border-color:var(--ac)}
+#modal{background:rgba(0,0,0,.6)}
+.ing-new{background:color-mix(in srgb,var(--ac) 16%,transparent);border-radius:.5rem;padding:.1rem .4rem}
+#sheet{transform:translateY(105%);transition:transform .35s}#sheet.open{transform:none}
+.toast{position:fixed;left:50%;bottom:5rem;transform:translateX(-50%);z-index:80;padding:.6rem 1rem;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.3);font-size:.85rem;font-weight:600}
+.fi{height:1em;width:auto;display:inline-block;vertical-align:-.14em}
+#splash{position:fixed;inset:0;z-index:200;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.9rem;background:linear-gradient(160deg,#059669,#10b981 45%,#f59e0b);color:#fff;transition:opacity .5s,transform .5s;text-align:center;padding:1rem}
+#splash.out{opacity:0;transform:scale(1.08);pointer-events:none}
+#splash h1{font-size:2.8rem;line-height:1}#splash p{opacity:.9}
+.sp-plate{position:relative;width:8.5rem;height:8.5rem;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#e2e8f0);display:grid;place-items:center;font-size:4.4rem;box-shadow:0 18px 40px -8px rgba(0,0,0,.5);animation:spin .9s cubic-bezier(.3,1.4,.5,1) both}
+.sp-plate i{position:absolute;font-style:normal;font-size:2.1rem;animation:float 2.4s ease-in-out infinite}
+.sp-plate i:nth-child(2){top:-.8rem;left:-.4rem}.sp-plate i:nth-child(3){bottom:-.5rem;right:-.6rem;animation-delay:-.8s}.sp-plate i:nth-child(4){top:.4rem;right:-1rem;animation-delay:-1.6s}
+.sp-bar{width:11rem;height:.4rem;border-radius:9px;background:rgba(255,255,255,.35);overflow:hidden}.sp-bar b{display:block;height:100%;background:#fff;animation:ld 1.5s ease-out forwards}
+@keyframes spin{from{transform:scale(.3) rotate(-200deg);opacity:0}}
+@keyframes ld{from{width:0}to{width:100%}}
+</style>
+</head>
+<body>
+<div id="splash"><div class="sp-plate"><span>🥗</span><i>🍅</i><i>🥕</i><i>🌶️</i></div><h1 class="fd">Nutri Hub</h1><p>Eat well · Cook easy · Stay strong</p><div class="sp-bar"><b></b></div></div>
+<header>
+ <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center gap-3 justify-between">
+  <div class="flex items-center gap-3"><div class="w-14 h-14 rounded-2xl bac grid place-items-center text-4xl shadow-lg" style="background:linear-gradient(135deg,var(--ac),#f59e0b)">🥗</div><div><div class="fd text-xl leading-none">Nutri Hub</div><div class="text-xs mu">Recipes · Macros · Workouts</div></div></div>
+  <nav class="seg" id="tabs"><button class="on" data-t="r">🍽 Recipes</button><button data-t="e">🏋️ Exercises</button><button data-t="g">🛍️ Shop</button></nav>
+  <div class="seg" id="diets"><button class="on" data-d="all">All</button><button data-d="vegan">🌱 Strictly Vegan</button><button data-d="omni">🍗 Non-Vegan</button></div><button id="trophy" class="chip font-bold" style="font-size:1.2rem" onclick="game()" aria-label="Streak and achievements">🔥 <span id="stk">0</span></button><button id="menu" class="chip" style="font-size:1.5rem" onclick="setP(1)" aria-label="Open settings">⚙️</button>
+ </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-4 py-6 grid lg:grid-cols-[1fr_320px] gap-6">
+ <section>
+  <div class="mb-5"><h1 class="fd text-3xl md:text-4xl" id="ttl"></h1><p class="mu text-sm mt-1" id="sub"></p></div>
+  <div id="rv">
+   <div class="flex flex-wrap gap-2 mb-3">
+    <input id="q" class="flex-1 min-w-[200px]" placeholder="Search dish, ingredient, or “high protein”, “low carb”…">
+    <select id="tag"><option value="">All badges</option><option>Vegan</option><option>Vegetarian</option><option>Meat</option><option>Seafood</option><option>Dairy-Free</option><option>Gluten-Free</option></select>
+    <select id="cu"><option value="">All cuisines</option><option>African</option><option>Asian</option><option>Latin American</option><option>European</option><option>Global</option></select><select id="sort"><option value="">Sort: A–Z (default)</option><option value="z">Sort: Z–A</option><option value="f">Sort: Featured</option><option value="p">Protein ↓</option><option value="k">Calories ↑</option><option value="t">Prep time ↑</option></select>
+   </div>
+   <div class="flex flex-wrap gap-2 mb-5" id="chips"><button class="chip" data-c="hp">💪 High Protein (30g+)</button><button class="chip" data-c="lc">🥑 Low Carb (≤35g)</button><button class="chip" data-c="u5">🔥 Under 500 kcal</button></div>
+   <div id="grid" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-4"></div>
+   <div class="text-center mt-6"><button id="more" class="btn btn-o">Load more recipes</button></div>
+  </div>
+  <div id="ev" class="hidden">
+   <div class="flex flex-wrap gap-2 mb-3">
+    <input id="eq" class="flex-1 min-w-[200px]" placeholder="Search exercises…">
+    <select id="lv"><option value="">All levels</option><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select>
+    <select id="eqp"><option value="">All equipment</option><option>Bodyweight</option><option>Dumbbells</option><option>Barbell</option><option>Cable</option><option>Other</option></select>
+   </div>
+   <div class="flex flex-wrap gap-2 mb-5" id="gch"></div>
+   <div id="egrid" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-4"></div>
+  </div>
+  <div id="av" class="hidden">
+   <div class="sf rounded-2xl p-4"><label class="text-sm font-semibold">Paste any ingredient list (one per line)</label>
+    <textarea id="ain" rows="7" class="w-full mt-2" style="background:var(--bg);border:1px solid var(--ln);border-radius:.8rem;padding:.7rem;color:var(--tx);outline:none" placeholder="2 chicken breasts&#10;1 tbsp butter&#10;1 cup milk&#10;1 tbsp honey"></textarea>
+    <div class="flex gap-2 mt-3 flex-wrap"><button class="btn bac" onclick="adapt()">✨ Adapt to plant-based</button><button class="btn btn-o" onclick="ainEx()">Try an example</button></div></div>
+   <div id="aout" class="mt-5"></div></div>
+  <div id="gv" class="hidden"><div class="sf rounded-2xl p-4 mb-5 flex items-center justify-between gap-3"><div><b>🔄 Recipe Adapter</b><div class="mu text-xs">Turn on to paste any non-vegan ingredient list and get plant-based swaps with adjusted nutrition.</div></div><button id="asw" role="switch" aria-checked="false" aria-label="Toggle Recipe Adapter" class="sw" onclick="togA()"></button></div><div class="sf rounded-2xl p-4 mb-5"><h3 class="fd text-lg mb-1">Plan your shop</h3><p class="mu text-xs mb-3">Pick staples before you head out, tick ingredients inside any recipe, or type your own item.</p><div class="flex gap-2 mb-3"><input id="gadd" class="flex-1" placeholder="Add an item…" onkeydown="if(event.key==='Enter')addMan()"><button class="btn bac" onclick="addMan()">Add</button></div><div id="staples"></div></div></div>
+ </section>
+ <aside class="hidden lg:block"><div class="sf rounded-2xl p-5 sticky top-24" data-trk></div></aside>
+</main>
+
+<button id="cart" class="cartb bottom-24 lg:bottom-6" onclick="cartP(1)" aria-label="Open cart">🛒<b id="cartn">0</b></button>
+<button id="fab" class="lg:hidden fixed right-4 bottom-4 z-40 bac btn shadow-xl" onclick="sheet()">📊 Tracker</button>
+<div id="sheet" class="lg:hidden fixed inset-x-0 bottom-0 z-50 sf rounded-t-3xl p-5 max-h-[82vh] overflow-auto" style="padding-bottom:calc(1.25rem + env(safe-area-inset-bottom,0px))"><div data-trk></div><button class="btn btn-o w-full mt-4" onclick="sheet()">Close</button></div>
+
+<div id="sbg" class="hidden fixed inset-0 z-[68] bg-black/50" onclick="setP(0)"></div>
+<aside id="setp" class="fixed top-0 left-0 bottom-0 z-[69] w-full sm:w-[24rem] sf overflow-auto" style="transform:translateX(-105%);transition:transform .35s;border-radius:0;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)"><div class="flex items-center justify-between p-4" style="border-bottom:1px solid var(--ln)"><h2 class="fd text-2xl">⚙️ Settings</h2><button class="text-3xl px-2" onclick="setP(0)" aria-label="Close settings">✕</button></div><div class="p-4 space-y-7">
+<section><h3 class="fd text-lg mb-2">Appearance</h3><div class="flex items-center justify-between py-2"><span>🌙 Dark mode</span><button id="mode" role="switch" class="sw q" aria-label="Dark mode"></button></div><div class="py-2"><div class="mb-2">🔠 Text size</div><div id="szs" class="flex gap-2 flex-wrap"><button class="chip" onclick="setSize(0)">A</button><button class="chip" onclick="setSize(1)">A+</button><button class="chip" onclick="setSize(2)">A++</button><button class="chip" onclick="setSize(3)">A+++</button></div></div><div class="flex items-center justify-between py-2"><span>✨ Animations</span><button id="anim" role="switch" class="sw q on" onclick="setAnim(!ST.anim)" aria-label="Animations"></button></div></section>
+<section><h3 class="fd text-lg mb-2">Diet</h3><div id="sdiet" class="flex flex-wrap gap-2"><button class="chip on" data-d="all" onclick="pickDiet('all')">All dishes</button><button class="chip" data-d="vegan" onclick="pickDiet('vegan')">🌱 Strictly Vegan</button><button class="chip" data-d="omni" onclick="pickDiet('omni')">🍗 Non-Vegan</button></div></section>
+<section><h3 class="fd text-lg mb-2">Daily goals</h3><div class="grid grid-cols-2 gap-3"><label class="text-sm">Calories<input id="g_k" type="number" class="w-full" onchange="setGoal('k',this.value)"></label><label class="text-sm">Protein (g)<input id="g_p" type="number" class="w-full" onchange="setGoal('p',this.value)"></label><label class="text-sm">Carbs (g)<input id="g_c" type="number" class="w-full" onchange="setGoal('c',this.value)"></label><label class="text-sm">Fat (g)<input id="g_f" type="number" class="w-full" onchange="setGoal('f',this.value)"></label></div></section>
+<button class="btn btn-o w-full" onclick="resetS()">Reset settings</button></div></aside>
+<div id="cbg" class="hidden fixed inset-0 z-[65] bg-black/50" onclick="cartP(0)"></div>
+<aside id="cartp" class="fixed top-0 right-0 bottom-0 z-[66] w-full sm:w-[27rem] sf flex flex-col" style="transform:translateX(105%);transition:transform .35s;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);border-radius:0"><div class="flex items-center justify-between p-4" style="border-bottom:1px solid var(--ln)"><h2 class="fd text-2xl">🛒 Your Cart</h2><button class="text-3xl px-2" onclick="cartP(0)" aria-label="Close cart">✕</button></div><div id="gout" class="flex-1 overflow-auto p-4"></div></aside>
+<div id="modal" class="hidden fixed inset-0 z-[60] overflow-y-auto p-3 md:p-8" onclick="if(event.target===this)closeM()"><div class="sf rounded-3xl max-w-3xl mx-auto overflow-hidden" id="mbox"></div></div>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+// ---------- DATA ----------
+// proteins: n name, i ingredient, k kcal, p/c/f grams, m [iron mg, B12 µg, calcium mg, fiber g, sodium mg], t type, s swap index
+const VP=[
+{n:"Crispy Tofu",i:"150g extra-firm tofu, pressed & cubed",k:150,p:16,c:4,f:9,m:[2.7,0,350,2,15]},
+{n:"Lentil",i:"3/4 cup cooked green lentils",k:200,p:15,c:34,f:1,m:[4.5,0,30,10,10]},
+{n:"Chickpea",i:"1 cup cooked chickpeas",k:210,p:11,c:34,f:4,m:[3.5,0,70,9,25]},
+{n:"Black Bean",i:"1 cup seasoned black beans",k:190,p:12,c:34,f:1,m:[3.6,0,50,12,10]},
+{n:"Smoky Tempeh",i:"100g tempeh, sliced",k:190,p:20,c:8,f:11,m:[2.2,0.1,110,6,10]},
+{n:"BBQ Jackfruit",i:"1.5 cups young green jackfruit, shredded",k:110,p:2,c:26,f:1,m:[0.6,0,60,3,5]},
+{n:"Garlic Mushroom",i:"200g king oyster mushrooms, scored",k:90,p:5,c:12,f:2,m:[1.5,0,10,4,10]}];
+const OP=[
+{n:"Grilled Chicken",i:"150g chicken breast",k:220,p:40,c:0,f:5,m:[1.1,0.4,15,0,90],t:"Meat",s:0},
+{n:"Seared Beef",i:"150g lean beef strips",k:290,p:30,c:0,f:18,m:[3,2.4,20,0,80],t:"Meat",s:1},
+{n:"Grilled Salmon",i:"150g salmon fillet",k:280,p:30,c:0,f:17,m:[0.6,4.2,20,0,70],t:"Seafood",s:2},
+{n:"Garlic Shrimp",i:"150g peeled shrimp",k:140,p:28,c:1,f:2,m:[0.5,1.5,90,0,300],t:"Seafood",s:6},
+{n:"Pulled Pork",i:"150g slow-cooked pork tenderloin",k:270,p:28,c:2,f:17,m:[1.2,0.9,25,0,95],t:"Meat",s:5},
+{n:"Jammy Egg",i:"3 large eggs, soft-boiled",k:230,p:18,c:1,f:16,m:[2.7,1.5,75,0,210],t:"Vegetarian",s:0}];
+// formats: e emoji, h hue, t minutes, macros, i ingredients, st steps, g gluten-free, m micros, d dairy [omni, vegan alt, k,p,c,f, k,p,c,f]
+const FM=[
+{n:"Buddha Bowl",e:"🥗",h:150,t:20,k:330,p:8,c:48,f:12,g:1,m:[2.5,0,70,9,260],i:["1 cup cooked quinoa","1 cup roasted sweet potato & broccoli","1/2 avocado, sliced","2 tbsp lemon-tahini dressing"],st:["Roast sweet potato and broccoli at 425°F (220°C) for 20 minutes.","Cook quinoa in salted water until fluffy.","Cook the {p} until golden and fully done.","Assemble everything in a bowl and drizzle with dressing."]},
+{n:"Coconut Curry",e:"🍛",h:35,t:35,k:360,p:7,c:34,f:20,g:1,m:[3,0,90,6,420],i:["1/2 can coconut milk","1 tbsp red curry paste","1 cup spinach & diced tomato","3/4 cup cooked basmati rice"],st:["Sauté onion, garlic and ginger for 3 minutes, then stir in the curry paste.","Add coconut milk and tomatoes; simmer 10 minutes.","Add the {p} and cook until tender and warmed through.","Fold in spinach, season, and serve over rice."]},
+{n:"Tacos",e:"🌮",h:25,t:20,k:300,p:7,c:36,f:12,g:1,m:[2,0,80,6,350],i:["3 corn tortillas","Pico de gallo","Shredded cabbage slaw","Lime wedges"],d:["Sour cream & cheddar","Cashew crema",110,5,2,9,60,2,3,4],st:["Season the {p} with cumin, smoked paprika and salt, then cook in a hot pan.","Warm the tortillas on a dry skillet.","Fill tortillas with the {p} and slaw.","Top with pico de gallo, crema and a squeeze of lime."]},
+{n:"Stir-Fry",e:"🥢",h:10,t:20,k:280,p:6,c:38,f:10,g:0,m:[2,0,80,7,780],i:["Broccoli, bell pepper & snap peas","3/4 cup cooked brown rice","Ginger-garlic soy sauce"],st:["Cook rice and mix the sauce (soy, ginger, garlic, 1 tsp cornstarch).","Stir-fry the {p} over high heat; set aside.","Stir-fry the vegetables for 4 minutes until crisp-tender.","Return the {p}, add sauce, toss 1 minute and serve over rice."]},
+{n:"Hearty Soup",e:"🍲",h:15,t:40,k:240,p:6,c:34,f:7,g:1,m:[2.8,0,100,8,640],i:["Carrot, celery & onion","2 cups vegetable broth","1/2 can diced tomatoes","1 cup chopped kale"],st:["Sweat the carrot, celery and onion in a pot for 6 minutes.","Add broth, tomatoes and herbs; bring to a boil.","Add the {p} and simmer 20 minutes.","Stir in kale for the last 3 minutes and season well."]},
+{n:"Pasta",e:"🍝",h:5,t:25,k:420,p:12,c:68,f:9,g:0,m:[2.4,0,40,5,480],i:["85g spaghetti","Garlic-tomato sauce","Fresh basil"],d:["Butter & parmesan","Olive oil & nutritional yeast",130,5,1,11,110,4,3,8],st:["Boil pasta in salted water until al dente.","Simmer garlic and tomatoes into a sauce for 10 minutes.","Cook the {p} separately and fold into the sauce.","Toss with pasta, finish with basil."]},
+{n:"Power Salad",e:"🥬",h:110,t:15,k:220,p:5,c:20,f:14,g:1,m:[2,0,60,6,320],i:["3 cups mixed greens","Cucumber, tomato & red onion","1 tbsp olive oil & lemon dressing"],d:["Crumbled feta","Marinated olives & hemp seeds",75,4,1,6,70,3,2,6],st:["Wash and dry the greens; slice the vegetables.","Cook or warm the {p}.","Whisk the dressing.","Toss everything together and serve immediately."]},
+{n:"Wrap",e:"🌯",h:45,t:15,k:340,p:9,c:44,f:13,g:0,m:[2.6,0,50,6,720],i:["1 large whole-wheat tortilla","Romaine & shredded carrot","Cucumber ribbons"],d:["Yogurt-garlic sauce","Hummus-garlic sauce",60,4,5,2,70,3,6,4],st:["Warm the tortilla for 20 seconds.","Spread the sauce down the center.","Layer the {p}, lettuce, carrot and cucumber.","Fold the sides in, roll tightly and slice in half."]},
+{n:"Fried Rice",e:"🍚",h:60,t:20,k:360,p:8,c:56,f:10,g:0,m:[2,0,50,4,820],i:["1 cup day-old cooked rice","Peas, carrot & scallions","1 tbsp soy sauce & sesame oil"],st:["Heat a wok until very hot with a splash of oil.","Cook the {p} and set aside.","Stir-fry vegetables 2 minutes, then add rice and press to crisp.","Return the {p}, add soy and sesame oil, toss and serve."]},
+{n:"Sheet-Pan Dinner",e:"🥘",h:20,t:35,k:300,p:6,c:36,f:13,g:1,m:[2,0,60,7,400],i:["Baby potatoes & Brussels sprouts","Garlic, thyme & paprika","Lemon wedges"],d:["Butter-herb glaze","Olive oil-herb glaze",80,0,0,9,70,0,0,8],st:["Heat the oven to 425°F (220°C) and line a sheet pan.","Toss the vegetables and {p} with oil, glaze and spices.","Roast 25 minutes, flipping once.","Finish with lemon juice and fresh herbs."]}];
+const R=[];let _i=0;
+VP.forEach(p=>FM.forEach(f=>R.push({id:_i++,p,f,vegan:true})));
+OP.forEach(p=>FM.forEach(f=>R.push({id:_i++,p,f,vegan:false})));
+function view(r,sw){if(r.x)return viewX(r,sw);
+ const p=sw&&!r.vegan?VP[r.p.s]:r.p,f=r.f,vg=r.vegan||sw;
+ let k=p.k+f.k,P=p.p+f.p,C=p.c+f.c,F=p.f+f.f,ing=[[p.i,sw]].concat(f.i.map(x=>[x,0])),m=p.m.map((x,i)=>x+f.m[i]);
+ if(f.d){const d=f.d;if(vg){k+=d[6];P+=d[7];C+=d[8];F+=d[9];ing.push([d[1],sw])}else{k+=d[2];P+=d[3];C+=d[4];F+=d[5];ing.push([d[0],0]);m[2]+=60;m[1]+=0.3}}
+ const tags=vg?["Vegan","Dairy-Free"]:[r.p.t].concat(f.d?[]:["Dairy-Free"]);
+ if(p.t!=="x"&&f.g)tags.push("Gluten-Free");
+ return{...gv(p,f,vg),name:p.n+" "+f.n,vegan:vg,k,p:P,c:C,f:F,ing,m:m.map(x=>Math.round(x*10)/10),tags,t:f.t,
+  steps:f.st.map(s=>s.replace(/\{p\}/g,p.n.toLowerCase()))};
+}
+const ytU=(c,q)=>'https://www.youtube.com/results?search_query='+encodeURIComponent((c+' '+q).trim());
+const CU={'Coconut Curry':'Asian','Stir-Fry':'Asian','Fried Rice':'Asian','Tacos':'Latin American','Pasta':'European'};
+// [vegan cook, non-vegan cook] per dish style
+const CK={'Buddha Bowl':['Pick Up Limes','Downshiftology'],'Coconut Curry':['Rainbow Plant Life','Marion’s Kitchen'],'Tacos':['Rainbow Plant Life','Mexico in My Kitchen'],'Stir-Fry':['Pick Up Limes','Wok With Ray'],'Hearty Soup':['Minimalist Baker','Natasha’s Kitchen'],'Pasta':['Pick Up Limes','Vincenzo’s Plate'],'Power Salad':['Downshiftology','Downshiftology'],'Wrap':['Rainbow Plant Life','Downshiftology'],'Fried Rice':['Rainbow Plant Life','Souped Up Recipes'],'Sheet-Pan Dinner':['Pick Up Limes','Downshiftology']};
+const gv=(p,f,vg)=>{const c=CK[f.n][vg?0:1];return{cu:CU[f.n]||'Global',ck:c,yt:ytU(c,p.n+' '+f.n)}};
+function viewX(r,sw){const x=r.x,vg=!!x.v||sw,sx=sw&&!x.v&&x.s;let k=x.k,P=x.p,C=x.c,F=x.f,m=x.m.slice(),ing=x.i.map(t=>[t,0]),n=x.n;
+ if(sx){const s=x.s;k+=s[0];P+=s[1];C+=s[2];F+=s[3];m[0]+=s[4];m[1]+=s[5];m[2]+=s[6];m[3]+=s[7];ing=ing.map((a,i)=>s[8][i]?[s[8][i],1]:a);n='Vegan '+n}
+ const tags=vg?['Vegan','Dairy-Free']:x.tg.slice();if(x.g)tags.push('Gluten-Free');
+ return{name:n,vegan:vg,k,p:P,c:C,f:F,ing,m:m.map(v=>Math.max(0,Math.round(v*10)/10)),tags,t:x.t,steps:x.st,rg:x.rg,cu:x.cu,ck:sx?'':x.ck,yt:ytU(sx?'':x.ck,x.q+(sx?' vegan':''))}}
+const D=(n,rg,cu,e,h,t,v,k,p,c,f,g,m,i,st,tg,ck,q,s)=>({n,rg,cu,e,h,t,v,k,p,c,f,g,m,i,st,tg,ck,q,s});
+const NEW=[
+D('Smoky Party Jollof Rice','Nigeria / Ghana','African','🍚',12,50,1,480,9,86,11,1,[3,0,60,5,520],['1.5 cups parboiled long-grain rice','Blended tomato, red pepper & scotch bonnet','1 onion & 2 tbsp oil','Thyme, curry powder, bay leaf & vegetable stock','Fried plantain to serve'],['Blend tomatoes, peppers and onion; fry the paste in oil until the oil floats.','Add spices and stock and bring to a boil.','Stir in washed rice, cover tightly and cook on low for 30 minutes.','Let the bottom toast for smoky flavour, then fluff and serve.'],0,'Nigerian Food TV','party jollof rice recipe'),
+D('Egusi Soup with Beef & Fish','Nigeria','African','🍲',28,50,0,520,32,12,38,1,[5,3,140,4,600],['1 cup ground egusi (melon seeds)','150g beef & smoked fish','2 cups spinach or bitterleaf','Palm oil, onion & pepper base','Stock cube & crayfish'],['Fry the onion and pepper base in palm oil for 5 minutes.','Mix egusi with a little water and drop spoonfuls into the pot.','Add beef, fish and stock; simmer 20 minutes, then stir in greens.'],['Meat','Seafood'],'Immaculate Bites','egusi soup recipe',[-120,-12,6,-10,.5,-3,250,3,{1:'200g king oyster mushrooms + 100g tofu',4:'Vegetable stock cube & smoked paprika'}]),
+D('Groundnut Stew with Chicken','West Africa','African','🥜',30,45,0,560,38,24,36,1,[3.5,.4,90,6,640],['150g chicken pieces','1/2 cup natural peanut butter','Tomato, onion, ginger & garlic','Scotch bonnet & chicken stock','Sweet potato chunks'],['Brown the chicken, then fry onion, ginger and garlic.','Add tomato, stock and sweet potato; simmer 15 minutes.','Whisk in peanut butter and cook 15 minutes more. Serve with rice.'],['Meat'],'Immaculate Bites','groundnut peanut stew',[-30,-27,20,-1,2,-.4,40,8,{0:'1 cup chickpeas',3:'Scotch bonnet & vegetable stock'}]),
+D('Red Red (Bean & Plantain Stew)','Ghana','African','🍌',45,45,1,540,17,88,15,1,[5,0,90,16,350],['1 cup cooked black-eyed peas','2 tbsp red palm oil & onion','Tomato, ginger & chili','Fried ripe plantain','Gari to sprinkle'],['Heat palm oil and fry onion, ginger and chili.','Add tomato and the peas; simmer 20 minutes.','Fry the plantain until golden and serve with the stew and gari.'],0,'','Ghana red red bean stew fried plantain'),
+D('Waakye (Rice & Beans)','Ghana','African','🍛',350,60,1,490,15,90,8,1,[4,0,80,12,380],['1/2 cup black-eyed peas','1 cup rice cooked with millet leaves','Vegetable shito (pepper sauce)','Gari & sliced avocado','Fried plantain'],['Boil the peas with millet leaves until nearly tender.','Add rice and water and cook until soft and deep red.','Serve with shito, gari, avocado and plantain.'],0,'','how to cook Ghana waakye'),
+D('Kelewele (Spiced Fried Plantain)','Ghana','African','🍌',50,20,1,310,2,52,12,1,[1,0,10,4,150],['2 ripe plantains, cubed','Grated ginger, cayenne & cloves','Pinch of salt & minced onion','Oil for frying'],['Toss the plantain with ginger, cayenne, cloves and salt.','Fry in hot oil until dark golden and crisp at the edges.','Drain and serve warm.'],0,'','Ghana kelewele spicy fried plantain'),
+D('Misir Wot with Injera','Ethiopia','African','🥞',8,40,1,470,22,78,8,1,[8,0,110,16,480],['1 cup red lentils','2 tbsp berbere & 1 onion','Garlic, ginger & oil','1 injera flatbread'],['Cook the onion dry until soft, add oil, garlic, ginger and berbere.','Add lentils and water; simmer 25 minutes until thick.','Serve on injera.'],0,'','Ethiopian misir wot injera recipe'),
+D('Shiro Wot','Ethiopia','African','🍛',38,30,1,430,18,60,12,1,[5,0,90,10,420],['1/2 cup shiro (chickpea flour)','Onion, garlic & berbere','Tomato & oil','1 injera'],['Fry onion, garlic and berbere in oil.','Whisk in shiro and water to avoid lumps.','Simmer 15 minutes, stirring, and serve on injera.'],0,'','Ethiopian shiro wot recipe'),
+D('Chickpea & Apricot Tagine','Morocco','African','🍲',22,45,1,460,16,72,12,0,[5,0,110,15,520],['1.5 cups chickpeas','Ras el hanout, cumin & ginger','6 dried apricots & carrots','3/4 cup couscous'],['Soften onion and spices in oil.','Add chickpeas, carrots, apricots and stock; simmer 25 minutes.','Serve over steamed couscous.'],0,'CookingWithAlia','Moroccan chickpea tagine'),
+D('Lamb Tagine with Prunes','Morocco','African','🍖',18,90,0,620,38,52,26,0,[5,2.5,80,7,560],['150g lamb shoulder','Ras el hanout & cinnamon','Prunes & almonds','Onion & saffron','3/4 cup couscous'],['Brown the lamb with onion and spices.','Add water, prunes and saffron; cover and simmer 1 hour.','Top with almonds and serve with couscous.'],['Meat'],'CookingWithAlia','Moroccan lamb tagine prunes',[-170,-17,14,-16,.5,-2.5,35,9,{0:'1.5 cups chickpeas + mushrooms'}]),
+D('Thieboudienne (Fish & Rice)','Senegal','African','🍛',200,75,0,580,34,70,18,1,[3,5,90,6,700],['150g white fish','Parsley-garlic stuffing','Cabbage, carrot & cassava','1 cup broken rice','Tomato paste & onion'],['Stuff the fish with the parsley mix and brown it.','Simmer tomato sauce with the vegetables.','Cook the rice in the sauce and serve topped with fish and vegetables.'],['Seafood'],'','Senegalese thieboudienne recipe',[-80,-14,4,-6,2,-5,330,2,{0:'Marinated tofu + nori sheets'}]),
+D('Light Soup with Chicken & Fufu','Ghana','African','🍲',25,50,0,410,34,40,15,1,[2,.4,40,3,720],['150g chicken','Tomato, onion, ginger & garlic blend','Scotch bonnet & garden eggs','1 ball fufu'],['Boil the chicken with the blended base.','Add garden eggs and pepper; simmer 25 minutes.','Serve hot with fufu.'],['Meat'],'','Ghana light soup chicken fufu',[-110,-22,6,-6,1,-.4,250,3,{0:'200g mushrooms + tofu'}]),
+D('Chana Masala','India','Asian','🍛',30,35,1,430,17,66,11,1,[5,0,100,15,480],['1.5 cups chickpeas','Onion, tomato & ginger-garlic','Garam masala, cumin & coriander','1/2 cup basmati rice'],['Fry onion, then ginger-garlic and spices.','Add tomato and chickpeas; simmer 20 minutes.','Finish with lemon and serve over rice.'],0,'Hebbar’s Kitchen','chana masala'),
+D('Dal Tadka','India','Asian','🍲',45,40,1,400,18,62,8,1,[5,0,60,13,420],['3/4 cup yellow dal','Turmeric & salt','Cumin, garlic & chili tempered in oil','1/2 cup rice'],['Boil the dal with turmeric until soft.','Heat oil and sizzle cumin, garlic and chili.','Pour the tadka over the dal and serve with rice.'],0,'Hebbar’s Kitchen','dal tadka'),
+D('Aloo Gobi','India','Asian','🥔',55,35,1,380,9,58,13,1,[3,0,70,8,420],['2 potatoes & 1/2 cauliflower','Cumin, turmeric & coriander','Onion, tomato & ginger','Oil & fresh cilantro'],['Fry cumin and onion, add ginger and spices.','Add potato, cauliflower and tomato; cover and cook 20 minutes.','Garnish with cilantro.'],0,'Hebbar’s Kitchen','aloo gobi'),
+D('Palak Paneer','India','Asian','🥦',130,35,0,480,24,22,34,1,[4,.5,420,6,560],['150g paneer','3 cups spinach, blended','Onion, tomato, ginger & garlic','1 tbsp cream & butter','1/2 cup rice'],['Blanch and blend the spinach.','Cook onion, ginger, garlic and tomato; add spinach.','Fold in paneer and cream; serve with rice.'],['Vegetarian'],'Hebbar’s Kitchen','palak paneer',[-80,-6,4,-14,2,-.5,-70,1,{0:'150g extra-firm tofu',3:'1 tbsp coconut cream'}]),
+D('Chicken Biryani','India','Asian','🍚',40,70,0,640,42,80,16,1,[3,.5,70,4,720],['150g chicken thigh','1 cup basmati rice','Yogurt marinade, ginger & garlic','Biryani masala, saffron & fried onion','Mint & coriander'],['Marinate the chicken with yogurt and spices.','Par-boil the rice; layer chicken, rice, onion and herbs.','Seal and steam on low for 25 minutes.'],['Meat'],'Hebbar’s Kitchen','chicken biryani',[-100,-6,8,-8,2,-.5,30,5,{0:'2 cups soy chunks',2:'Cashew-coconut marinade, ginger & garlic'}]),
+D('Bibimbap','Korea','Asian','🍲',8,40,0,590,28,84,16,0,[4,1.2,90,8,900],['150g marinated beef strips','1 cup rice','Spinach, carrot, zucchini & bean sprouts','Gochujang sauce','Sesame oil'],['Sauté each vegetable separately with a little sesame oil.','Cook the beef quickly in a hot pan.','Arrange everything on rice and top with gochujang.'],['Meat'],'Maangchi','bibimbap',[-110,-14,4,-8,-.5,-1.2,220,3,{0:'Marinated shiitake & tofu'}]),
+D('Mapo Tofu','China','Asian','🌶️',5,25,0,520,26,40,28,0,[4,.9,350,3,900],['300g silken tofu','80g minced pork','Doubanjiang & Sichuan peppercorn','Garlic, ginger & scallions','1/2 cup rice'],['Fry the pork with doubanjiang, garlic and ginger.','Add stock and tofu; simmer 8 minutes.','Finish with Sichuan pepper and scallions; serve with rice.'],['Meat'],'Omnivore’s Cookbook','mapo tofu',[-90,-14,5,-8,.8,-.9,0,3,{1:'80g minced mushrooms & walnuts'}]),
+D('Pad Thai with Shrimp','Thailand','Asian','🍜',35,25,0,560,30,72,16,1,[3,1.5,120,4,980],['100g rice noodles','120g shrimp','Tamarind, palm sugar & fish sauce','Bean sprouts, scallions & peanuts','1 egg'],['Soak the noodles until pliable.','Stir-fry shrimp and egg, then add noodles and sauce.','Toss in sprouts and serve with peanuts and lime.'],['Seafood'],'Pailin’s Kitchen','pad thai',[-70,-8,2,-2,1.5,-1.5,180,1,{1:'Pressed tofu cubes',2:'Tamarind, palm sugar & soy sauce',4:'Tofu scramble'}]),
+D('Thai Green Curry with Chicken','Thailand','Asian','🍛',120,35,0,560,34,40,32,1,[3,.4,70,5,780],['150g chicken','1/2 can coconut milk','Green curry paste','Thai basil, eggplant & beans','1/2 cup jasmine rice'],['Fry the paste in coconut cream until fragrant.','Add chicken, vegetables and remaining coconut milk; simmer 12 minutes.','Finish with basil and serve over rice.'],['Meat'],'Pailin’s Kitchen','Thai green curry',[-70,-24,4,4,1.6,-.4,330,2,{0:'Tofu & extra vegetables'}]),
+D('Tom Yum Soup with Shrimp','Thailand','Asian','🍲',8,25,0,220,22,14,8,1,[2,1.5,100,3,1100],['120g shrimp','Lemongrass, galangal & kaffir lime leaves','Mushrooms & tomato','Lime juice, chili & fish sauce'],['Simmer the aromatics in stock for 10 minutes.','Add mushrooms, tomato and shrimp; cook 3 minutes.','Finish with lime juice and chili.'],['Seafood'],'Pailin’s Kitchen','tom yum soup',[-30,-17,4,-1,1,-1.5,-80,2,{0:'Oyster mushrooms',3:'Lime juice, chili & soy sauce'}]),
+D('Miso Ramen (Vegan)','Japan','Asian','🍜',200,30,1,520,22,74,16,0,[4,0,120,8,1300],['1 serving ramen noodles','2 tbsp miso & kombu-shiitake broth','100g tofu & corn','Bok choy & scallions','Sesame oil'],['Simmer the kombu and shiitake broth, then whisk in miso off the heat.','Boil the noodles and bok choy.','Assemble with tofu, corn and sesame oil.'],0,'Just One Cookbook','vegan miso ramen'),
+D('Vegetable Pho','Vietnam','Asian','🍜',20,40,1,360,12,66,5,1,[3,0,90,6,900],['100g rice noodles','Star anise, cinnamon & charred ginger broth','Tofu & mushrooms','Bean sprouts, basil & lime'],['Simmer the spiced broth with charred ginger and onion for 30 minutes.','Cook the noodles and place in bowls with tofu and mushrooms.','Ladle on the hot broth and top with sprouts, basil and lime.'],0,'','vegan vegetable pho recipe')
+];
+R.unshift(...NEW.map(x=>({x,vegan:!!x.v})));R.forEach((r,i)=>r.id=i);
+R.forEach(r=>r.v=view(r,0));
+const EX=`Push-Up|Chest|Bodyweight|Beginner|3 × 12|45
+Incline Push-Up|Chest|Bodyweight|Beginner|3 × 15|35
+Dumbbell Bench Press|Chest|Dumbbells|Intermediate|4 × 10|65
+Barbell Bench Press|Chest|Barbell|Intermediate|4 × 8|75
+Cable Chest Fly|Chest|Cable|Intermediate|3 × 12|50
+Weighted Chest Dip|Chest|Bodyweight|Advanced|3 × 8|70
+Lat Pulldown|Back|Cable|Beginner|3 × 12|55
+Seated Cable Row|Back|Cable|Beginner|3 × 12|55
+Single-Arm Dumbbell Row|Back|Dumbbells|Beginner|3 × 10|55
+Bent-Over Barbell Row|Back|Barbell|Intermediate|4 × 8|75
+Pull-Up|Back|Bodyweight|Advanced|4 × 6|70
+Deadlift|Back|Barbell|Advanced|4 × 5|100
+Bodyweight Squat|Legs|Bodyweight|Beginner|3 × 15|50
+Goblet Squat|Legs|Dumbbells|Beginner|3 × 12|65
+Glute Bridge|Legs|Bodyweight|Beginner|3 × 15|40
+Calf Raise|Legs|Bodyweight|Beginner|3 × 20|30
+Barbell Back Squat|Legs|Barbell|Intermediate|4 × 8|95
+Walking Lunge|Legs|Dumbbells|Intermediate|3 × 12 each|75
+Romanian Deadlift|Legs|Barbell|Intermediate|3 × 10|80
+Bulgarian Split Squat|Legs|Dumbbells|Advanced|3 × 8 each|85
+Overhead Dumbbell Press|Shoulders|Dumbbells|Beginner|3 × 10|55
+Lateral Raise|Shoulders|Dumbbells|Beginner|3 × 15|35
+Face Pull|Shoulders|Cable|Beginner|3 × 15|35
+Barbell Overhead Press|Shoulders|Barbell|Intermediate|4 × 6|70
+Pike Push-Up|Shoulders|Bodyweight|Intermediate|3 × 10|50
+Handstand Push-Up|Shoulders|Bodyweight|Advanced|3 × 5|65
+Bicep Curl|Arms|Dumbbells|Beginner|3 × 12|35
+Hammer Curl|Arms|Dumbbells|Beginner|3 × 12|35
+Tricep Pushdown|Arms|Cable|Beginner|3 × 12|35
+Overhead Tricep Extension|Arms|Dumbbells|Intermediate|3 × 12|40
+Close-Grip Push-Up|Arms|Bodyweight|Intermediate|3 × 10|45
+Chin-Up|Arms|Bodyweight|Intermediate|3 × 6|60
+Plank|Core|Bodyweight|Beginner|3 × 45 sec|30
+Dead Bug|Core|Bodyweight|Beginner|3 × 10 each|30
+Bicycle Crunch|Core|Bodyweight|Beginner|3 × 20|35
+Russian Twist|Core|Bodyweight|Intermediate|3 × 20|40
+Ab Wheel Rollout|Core|Other|Advanced|3 × 8|50
+Hanging Leg Raise|Core|Bodyweight|Advanced|3 × 10|50
+Brisk Walking|Cardio|Bodyweight|Beginner|30 min|140
+Jump Rope|Cardio|Other|Intermediate|10 min|130
+Burpees|Cardio|Bodyweight|Intermediate|4 × 10|120
+Mountain Climbers|Cardio|Bodyweight|Intermediate|4 × 30 sec|90
+Running Intervals|Cardio|Bodyweight|Intermediate|20 min|240
+Rowing Machine|Cardio|Other|Intermediate|20 min|200
+Kettlebell Swing|Cardio|Other|Intermediate|4 × 15|110
+Box Jumps|Cardio|Other|Advanced|4 × 8|90
+Cat-Cow Stretch|Mobility|Bodyweight|Beginner|2 min|15
+Hip Flexor Stretch|Mobility|Bodyweight|Beginner|2 × 45 sec each|15
+Downward Dog|Mobility|Bodyweight|Beginner|3 × 45 sec|20
+World’s Greatest Stretch|Mobility|Bodyweight|Beginner|3 each side|20`.split("\n").map((l,i)=>{const a=l.split("|");return{id:i,n:a[0],g:a[1],e:a[2],l:a[3],rx:a[4],k:+a[5]}});
+const GI={Chest:"🫁",Back:"🦍",Legs:"🦵",Shoulders:"🏔️",Arms:"💪",Core:"🎯",Cardio:"🏃",Mobility:"🧘"};
+const GROUPS=Object.keys(GI);
+const yt=n=>"https://www.youtube.com/results?search_query="+encodeURIComponent(n+" proper form tutorial");
+const G={k:2000,p:130,c:230,f:70};
+const S={tab:"r",diet:"all",q:"",hp:0,lc:0,u5:0,tag:"",sort:"",shown:24,g:"",lv:"",eqp:"",eq:""};
+let T=[],W=[],cur=null,sw=false,uid=0;
+// ---------- RENDER ----------
+const bcls={Vegan:"b-vegan",Vegetarian:"b-veg",Meat:"b-meat",Seafood:"b-sea","Dairy-Free":"b-df","Gluten-Free":"b-gf"};
+const badges=v=>v.tags.map(t=>`<span class="b ${bcls[t]}">${t==="Vegan"?"🌱 ":""}${t}</span>`).join("")+(v.vegan?"":`<span class="b b-lv">Non-Vegan</span>`)+(v.rg?`<span class="b b-lv">🌍 ${v.rg}</span>`:"");
+function filtered(){
+ let q=S.q.toLowerCase(),hp=S.hp,lc=S.lc,u5=S.u5;
+ if(/high.protein/.test(q)){hp=1;q=q.replace(/high.protein/,"")}
+ if(/low.carb/.test(q)){lc=1;q=q.replace(/low.carb/,"")}
+ if(/under.500/.test(q)){u5=1;q=q.replace(/under.500(\s*kcal)?/,"")}
+ const ws=q.split(/\s+/).filter(Boolean);
+ let a=R.filter(r=>{const v=r.v;
+  if(S.diet==="vegan"&&!r.vegan||S.diet==="omni"&&r.vegan)return 0;
+  if(hp&&v.p<30||lc&&v.c>35||u5&&v.k>=500)return 0;
+  if(S.tag&&!v.tags.includes(S.tag)||S.cu&&v.cu!==S.cu)return 0;
+  if(ws.length){const h=(v.name+" "+v.ing.map(i=>i[0]).join(" ")).toLowerCase();if(!ws.every(w=>h.includes(w)))return 0}
+  return 1});
+ if(S.sort===""||S.sort==="z")a.sort((x,y)=>x.v.name.localeCompare(y.v.name)*(S.sort==="z"?-1:1));if(S.sort==="p")a.sort((x,y)=>y.v.p-x.v.p);if(S.sort==="k")a.sort((x,y)=>x.v.k-y.v.k);if(S.sort==="t")a.sort((x,y)=>x.v.t-y.v.t);
+ return a}
+function drawRecipes(){
+ const a=filtered();
+ $("#grid").innerHTML=a.slice(0,S.shown).map((r,i)=>{const v=r.v,f=r.f||{h:r.x.h,e:r.x.e};return `<article class="card" style="animation-delay:${i%12*35}ms">
+ <div class="hero zoom" role="button" tabindex="0" aria-label="Open ${v.name} breakdown" onclick="openM(${r.id})" onkeydown="if(event.key==='Enter')openM(${r.id})" style="background:linear-gradient(135deg,hsl(${f.h} 70% 58%),hsl(${f.h+35} 65% 38%))"><span class="plate"><span class="emo">${f.e}</span>${gar(r)}</span><span class="tap">${v.k} kcal · ${v.p}P · ${v.c}C · ${v.f}F · tap for details</span><span class="time">⏱ ${v.t} min</span></div>
+ <div class="p-4 flex flex-col gap-3 flex-1"><div class="flex flex-wrap gap-1.5">${badges(v)}</div>
+ <div><h3 class="fd text-lg leading-snug cursor-pointer hover:underline" onclick="openM(${r.id})">${v.name}</h3><div class="mu text-sm"><b class="ac">${v.k}</b> kcal per serving</div></div>
+ <div class="flex gap-2"><div class="mac"><b>${v.p}g</b>Protein</div><div class="mac"><b>${v.c}g</b>Carbs</div><div class="mac"><b>${v.f}g</b>Fat</div></div>
+ <div class="flex gap-2 mt-auto"><button class="btn btn-o flex-1" onclick="openM(${r.id})">View Full Breakdown</button><a class="btn btn-o" target="_blank" rel="noopener" title="Watch how to cook it" href="${v.yt}">📺 Watch</a><button class="btn bac" title="Add to Daily Tracker" onclick="addR(${r.id},0)">＋ Add</button></div></div></article>`}).join("")||`<p class="mu col-span-full text-center py-12">No recipes match your filters. Try clearing some.</p>`;
+ $("#more").style.display=a.length>S.shown?"":"none";
+ $("#more").textContent=`Load more recipes (${a.length-S.shown} left)`;
+ $("#sub").textContent=`${a.length} of ${R.length} recipes · ${R.filter(r=>r.vegan).length} vegan, ${R.filter(r=>!r.vegan).length} non-vegan`}
+function drawEx(){
+ const q=S.eq.toLowerCase();
+ const a=EX.filter(e=>(!S.g||e.g===S.g)&&(!S.lv||e.l===S.lv)&&(!S.eqp||e.e===S.eqp)&&(!q||(e.n+" "+e.g).toLowerCase().includes(q)));
+ $("#egrid").innerHTML=a.map(e=>`<article class="card p-4 gap-3">
+ <div class="flex items-center gap-3"><div class="w-16 h-16 rounded-2xl soft grid place-items-center text-4xl">${GI[e.g]}</div><div><h3 class="fd text-lg leading-tight">${e.n}</h3><div class="mu text-xs">${e.g} · ${e.e}</div></div></div>
+ <div class="flex flex-wrap gap-1.5"><span class="b b-lv">${e.l}</span><span class="b b-gf">${e.rx}</span><span class="b b-df">≈${e.k} kcal</span></div>
+ <div class="flex gap-2 mt-auto"><a class="btn btn-o flex-1 text-center" target="_blank" rel="noopener" href="${yt(e.n)}">📺 Watch tutorial</a><button class="btn bac" onclick="addE(${e.id})">Log</button></div></article>`).join("")||`<p class="mu col-span-full text-center py-12">No exercises found.</p>`;
+ $("#sub").textContent=`${a.length} of ${EX.length} exercises · tutorials open YouTube searches for proper form`}
+const TT={r:["Eat well. Track every macro.",""],e:["Train smart. Burn it off.",""],a:["Recipe Adapter","Paste any ingredient list and get plant-based swaps with adjusted nutrition."],g:["Grocery Shop","Pick meat, vegetables and staples, then tap the cart to tick off and send your list."]};
+function tab(){const t=S.tab;["r","e","g"].forEach(k=>$("#"+k+"v").classList.toggle("hidden",k!==t));
+ $("#ttl").textContent=TT[t][0];$("#sub").textContent=TT[t][1];t==="r"?drawRecipes():t==="e"?drawEx():drawG()}
+function goTab(t){$(`#tabs button[data-t="${t}"]`).click();$("#sheet").classList.remove("open");scrollTo({top:0,behavior:"smooth"})}
+// ---------- TRACKER ----------
+function trk(){
+ const t=T.reduce((a,x)=>({k:a.k+x.k,p:a.p+x.p,c:a.c+x.c,f:a.f+x.f}),{k:0,p:0,c:0,f:0}),b=W.reduce((a,x)=>a+x.k,0);
+ const row=(l,v,g,u)=>`<div class="mb-3"><div class="flex justify-between text-sm mb-1"><span>${l}</span><span class="mu"><b style="color:var(--tx)">${Math.round(v)}</b> / ${g}${u}</span></div><div class="bar"><i class="${v>g?"over":""}" style="width:${Math.min(100,v/g*100)}%"></i></div></div>`;
+ const html=`<div class="flex justify-between items-center mb-3"><h2 class="fd text-xl">Daily Tracker</h2><button class="text-xs mu underline" onclick="clr()">Reset</button></div>
+ <div class="soft rounded-xl p-3 mb-4 flex justify-between text-center text-xs"><div><b class="block text-lg">${Math.round(t.k)}</b>eaten</div><div><b class="block text-lg">${b}</b>burned</div><div><b class="block text-lg ac">${Math.round(t.k-b)}</b>net kcal</div></div>
+ ${row("Calories",t.k-b>0?t.k-b:0,G.k," kcal")}${row("Protein",t.p,G.p,"g")}${row("Carbs",t.c,G.c,"g")}${row("Fat",t.f,G.f,"g")}
+ <div class="text-xs font-semibold mu uppercase tracking-wide mb-1">Meals (${T.length})</div>
+ ${T.map(x=>`<div class="flex justify-between gap-2 text-sm py-1 border-b" style="border-color:var(--ln)"><span class="truncate">${x.n}</span><span class="mu whitespace-nowrap">${x.k} kcal <button onclick="rm('T',${x.u})" class="ml-1">✕</button></span></div>`).join("")||`<p class="mu text-sm py-1">Nothing yet — tap “＋ Add” on a recipe.</p>`}
+ <div class="text-xs font-semibold mu uppercase tracking-wide mt-4 mb-1">Workouts (${W.length})</div>
+ ${W.map(x=>`<div class="flex justify-between gap-2 text-sm py-1 border-b" style="border-color:var(--ln)"><span class="truncate">${x.n}</span><span class="mu whitespace-nowrap">−${x.k} kcal <button onclick="rm('W',${x.u})" class="ml-1">✕</button></span></div>`).join("")||`<p class="mu text-sm py-1">Log an exercise to offset calories.</p>`}<button class="btn bac w-full mt-4" onclick="cartP(1)">🛒 Open cart (${Object.keys(gItems()).length})</button>`;
+ $$("[data-trk]").forEach(e=>e.innerHTML=html);$("#fab").textContent=`📊 ${Math.round(t.k-b)} kcal`;drawG();$("#cartn").textContent=Object.keys(gItems()).length}
+function toast(m){const e=document.createElement("div");e.className="toast bac";e.textContent=m;document.body.appendChild(e);setTimeout(()=>e.remove(),1800);const b=$("#fab");b.classList.remove("pop");void b.offsetWidth;b.classList.add("pop")}
+function addR(id,s){const v=s?view(R[id],1):R[id].v;T.push({u:uid++,n:v.name,k:v.k,p:v.p,c:v.c,f:v.f,ing:v.ing.map(i=>i[0])});v.ing.forEach(i=>GX.delete(i[0]));fly(window.event&&window.event.target);trk();gEvt('meal',v)}
+function addE(id){const e=EX[id];W.push({u:uid++,n:e.n,k:e.k});trk();gEvt('work');toast("Logged: "+e.n)}
+function rm(w,u){if(w==="T")T=T.filter(x=>x.u!==u);else W=W.filter(x=>x.u!==u);trk()}
+function clr(){T=[];W=[];trk()}
+function sheet(){$("#sheet").classList.toggle("open")}
+// ---------- MODAL ----------
+function openM(id){cur=R[id];sw=false;drawM();$("#modal").classList.remove("hidden");document.body.style.overflow="hidden"}
+function closeM(){window.speechSynthesis&&speechSynthesis.cancel();$("#modal").classList.add("hidden");document.body.style.overflow=""}
+function swap(){sw=!sw;drawM()}
+function drawM(){
+ const v=view(cur,sw),o=cur.v,f=cur.f||{h:cur.x.h,e:cur.x.e},d=(a,b)=>{const x=Math.round(a-b);return x>0?"+"+x:x};
+ const dv=[["Iron",v.m[0],18,"mg"],["Vitamin B12",v.m[1],2.4,"µg"],["Calcium",v.m[2],1300,"mg"],["Fiber",v.m[3],28,"g"],["Sodium",v.m[4],2300,"mg"]];
+ $("#mbox").innerHTML=`<div class="hero" style="height:9rem;background:linear-gradient(135deg,hsl(${f.h} 70% 58%),hsl(${f.h+35} 65% 38%));font-size:4.5rem;height:12rem"><span class="plate"><span class="emo">${f.e}</span>${gar(cur)}</span><button onclick="closeM()" class="absolute left-3 top-3 w-9 h-9 rounded-full bg-black/50 text-white text-base">✕</button></div>
+ <div class="p-5 md:p-7">
+ <div class="flex flex-wrap gap-1.5 mb-2">${badges(v)}</div>
+ <h2 class="fd text-2xl md:text-3xl">${v.name}</h2><p class="mu text-sm mt-1">⏱ ${v.t} min · 1 serving${v.rg?" · "+v.rg:""}</p><div class="flex flex-wrap gap-2 mt-3"><a class="btn bac" target="_blank" rel="noopener" href="${v.yt}">📺 Watch how to cook it${v.ck?" · "+v.ck:""}</a><button class="btn btn-o" onclick="speak()">🔊 Listen to the steps</button></div>
+ ${cur.vegan?"":`<div class="soft rounded-2xl p-4 mt-4 flex flex-wrap items-center gap-3 justify-between"><div class="text-sm"><b>🌱 ${sw?"Veganized! Plant-based ingredients on":"Auto-Veganizer: flip the switch"}</b><div class="mu">${sw?`${cur.x?"Animal ingredients swapped for plant-based ones.":`Swapped ${cur.p.n.split(" ").pop().toLowerCase()} for ${VP[cur.p.s].n.toLowerCase()}${f.d?" and dairy for "+f.d[1].toLowerCase():""}.`} Δ vs original: ${d(v.k,o.k)} kcal · ${d(v.p,o.p)}g protein · ${d(v.c,o.c)}g carbs · ${d(v.f,o.f)}g fat`:"Auto-swap animal ingredients and recalculate the macros."}</div></div><button role="switch" aria-checked="${sw}" aria-label="Auto-Veganize" class="sw ${sw?"on":""}" onclick="swap()"></button></div>`}
+ <div class="flex gap-2 mt-4"><div class="mac"><b class="ac text-lg">${v.k}</b>kcal</div><div class="mac"><b class="text-lg">${v.p}g</b>Protein</div><div class="mac"><b class="text-lg">${v.c}g</b>Carbs</div><div class="mac"><b class="text-lg">${v.f}g</b>Fat</div></div>
+ <div class="grid md:grid-cols-2 gap-6 mt-6">
+  <div><h3 class="fd text-lg mb-2">Ingredients</h3><ul class="space-y-1.5 text-sm">${v.ing.map(i=>`<li><label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="ck gi" checked value="${esc(i[0])}"><span class="${i[1]?"ing-new":""}">${i[0]}${i[1]?" 🌱":""}</span></label></li>`).join("")}</ul></div>
+  <div><h3 class="fd text-lg mb-2">Micronutrients <span class="mu text-xs font-normal">(% daily value)</span></h3>${dv.map(x=>`<div class="mb-2"><div class="flex justify-between text-xs mb-1"><span>${x[0]}</span><span class="mu">${x[1]} ${x[3]} · ${Math.round(x[1]/x[2]*100)}%</span></div><div class="bar"><i class="${x[0]==="Sodium"&&x[1]>x[2]*.3?"over":""}" style="width:${Math.min(100,x[1]/x[2]*100)}%"></i></div></div>`).join("")}</div>
+ </div>
+ <h3 class="fd text-lg mt-6 mb-2">Instructions</h3><ol class="space-y-3 text-sm">${v.steps.map((s,i)=>`<li class="flex gap-3"><span class="w-6 h-6 shrink-0 rounded-full bac grid place-items-center text-xs font-bold">${i+1}</span><span>${s}</span></li>`).join("")}</ol>
+ <div class="flex flex-wrap gap-2 mt-7"><button class="btn bac flex-1" onclick="addR(${cur.id},${sw?1:0})">＋ Add to Daily Tracker</button><button class="btn btn-o flex-1" onclick="addSel()">🛒 Add ticked ingredients to list</button><button class="btn btn-o" onclick="closeM()">Close</button></div></div>`}
+// ---------- ADAPTER ----------
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])),enc=s=>encodeURIComponent(s).replace(/'/g,"%27");
+// [regex, plant-based substitute, original nutrition, substitute nutrition] per typical serving: kcal,P,C,F,iron,B12,Ca,fiber
+const AD=[
+[/fish sauce/,"soy sauce + seaweed flakes",[10,2,1,0,.2,.2,15,0],[10,1,1,0,.3,0,3,0]],
+[/worcestershire/,"vegan Worcestershire (tamari + tamarind)",[5,0,1,0,0,0,5,0],[5,0,1,0,.1,0,5,0]],
+[/ice cream/,"oat or coconut ice cream",[140,2,16,7,0,.2,70,0],[130,1,18,6,.4,0,30,1]],
+[/sour cream/,"cashew crema",[60,1,1,6,0,.1,30,0],[50,1,3,4,.3,0,5,0]],
+[/cheese|parmesan|cheddar|mozzarella|feta|ricotta/,"cashew cheese or nutritional yeast",[110,7,1,9,.1,.3,200,0],[90,6,5,5,.7,1,10,2]],
+[/milk/,"fortified soy milk",[150,8,12,8,0,1.2,300,0],[100,7,4,4,1,1.2,300,1]],
+[/cream/,"coconut cream or cashew cream",[200,1.5,2,21,0,.1,40,0],[190,2,3,19,1,0,10,1]],
+[/ghee/,"coconut oil",[120,0,0,14,0,0,0,0],[120,0,0,14,0,0,0,0]],
+[/butter/,"olive oil or vegan butter",[100,0,0,11,0,0,3,0],[90,0,0,10,0,0,0,0]],
+[/yogh?urt/,"unsweetened soy or coconut yogurt",[150,8,11,8,0,1,290,0],[100,6,7,5,1,1,300,1]],
+[/honey/,"maple syrup",[64,0,17,0,0,0,1,0],[52,0,13,0,.1,0,20,0]],
+[/mayo/,"vegan mayo (aquafaba)",[95,0,0,10,0,.1,2,0],[80,0,0,9,0,0,0,0]],
+[/gelatin/,"agar-agar powder",[23,6,0,0,0,0,0,0],[3,0,1,0,0,0,0,1]],
+[/bacon/,"smoky tempeh strips",[130,9,0,10,.3,.4,5,0],[100,6,4,7,1,.1,20,1]],
+[/chicken/,"extra-firm tofu or seitan",[250,46,0,5,1.1,.4,15,0],[150,16,4,9,2.7,0,350,2]],
+[/beef|steak|mince/,"lentils + walnuts",[290,30,0,18,3,2.4,20,0],[260,16,30,10,4.5,0,40,10]],
+[/lamb/,"mushrooms + lentils",[350,32,0,24,2.2,2.5,20,0],[220,15,30,3,4,0,30,8]],
+[/turkey/,"seitan",[200,40,0,3,1.5,.4,15,0],[210,38,8,2,2.5,0,20,1]],
+[/pork|\bham\b/,"young jackfruit",[270,28,2,17,1.2,.9,25,0],[110,2,26,1,.6,0,60,3]],
+[/salmon/,"extra-firm tofu + nori",[280,30,0,17,.6,4.2,20,0],[160,17,4,9,2.8,0,350,2]],
+[/shrimp|prawn/,"king oyster mushrooms",[140,28,1,2,.5,1.5,90,0],[90,5,12,2,1.5,0,10,4]],
+[/tuna|\bcod\b|tilapia|fish/,"mashed chickpeas + nori",[180,40,0,1.5,1.5,5,20,0],[190,10,30,4,3.2,0,70,8]],
+[/\beggs?\b/,"tofu scramble (or 1 tbsp flax + 3 tbsp water per egg when baking)",[150,12,1,10,1.8,1,56,0],[90,9,3,5,1.8,0,160,1]]];
+const KEEP=/coconut (milk|cream)|almond (milk|butter)|soy milk|oat milk|peanut butter|nut butter|cashew|cocoa butter|vegan|plant|tofu|tempeh/;
+let AR=[],EXTRA=[],done=new Set();
+function ainEx(){$("#ain").value="2 salmon fillets\n1 tbsp butter\n1/2 cup heavy cream\n1 tbsp honey\n2 eggs\n1/4 cup parmesan\n1 cup cooked rice\n1 lemon";adapt()}
+function adapt(){AR=$("#ain").value.split("\n").map(s=>s.trim()).filter(Boolean).map(l=>{const lo=l.toLowerCase();if(KEEP.test(lo))return{l};const m=AD.find(a=>a[0].test(lo));return m?{l,s:m[1],a:m[2],b:m[3]}:{l}});drawA()}
+const aList=()=>AR.map(r=>r.s||r.l);
+function drawA(){
+ if(!AR.length){$("#aout").innerHTML=`<p class="mu text-center py-10">Paste ingredients and tap “Adapt” to see plant-based swaps.</p>`;return}
+ const o=Array(8).fill(0),n=Array(8).fill(0);AR.forEach(r=>r.a&&r.a.forEach((x,i)=>{o[i]+=x;n[i]+=r.b[i]}));
+ const L=["Calories","Protein g","Carbs g","Fat g","Iron mg","B12 µg","Calcium mg","Fiber g"],cnt=AR.filter(r=>r.s).length,dl=i=>{const d=Math.round((n[i]-o[i])*10)/10;return d>0?"+"+d:d};
+ $("#aout").innerHTML=`<div class="grid md:grid-cols-2 gap-5"><div><h3 class="fd text-lg mb-2">Substitutions (${cnt} of ${AR.length})</h3><div class="space-y-2">${AR.map((r,i)=>r.s?`<div class="sf rounded-xl p-3 text-sm up" style="animation-delay:${i*40}ms"><div class="mu line-through">${esc(r.l)}</div><div class="font-semibold ac">→ ${r.s}</div></div>`:`<div class="sf rounded-xl p-3 text-sm up mu" style="animation-delay:${i*40}ms">✓ ${esc(r.l)} <span class="text-xs">(already plant-based)</span></div>`).join("")}</div></div>
+ <div><h3 class="fd text-lg mb-2">Adjusted nutrition <span class="mu text-xs font-normal">(swapped items, 1 typical serving each)</span></h3><div class="sf rounded-2xl p-4 text-sm"><div class="grid grid-cols-4 gap-1 text-xs mu mb-2"><span></span><span>Original</span><span>Plant</span><span>Change</span></div>${L.map((l,i)=>`<div class="grid grid-cols-4 gap-1 py-1 border-t" style="border-color:var(--ln)"><span>${l}</span><span>${Math.round(o[i]*10)/10}</span><b class="ac">${Math.round(n[i]*10)/10}</b><span class="mu">${dl(i)}</span></div>`).join("")}</div>${o[5]>n[5]?`<p class="text-xs mu mt-2">💊 B12 drops by ${Math.round((o[5]-n[5])*10)/10} µg: pick fortified milks or nutritional yeast, or take a B12 supplement.</p>`:""}</div></div>
+ <div class="flex flex-wrap gap-2 mt-5"><button class="btn bac" onclick="fly(event.target);aList().forEach(i=>GX.delete(i));EXTRA.push(...aList());toast('Added to grocery list');trk()">🛒 Add to grocery list</button><button class="btn btn-o" onclick="cp(aList().join('\\n'))">📋 Copy adapted list</button></div>`}
+// ---------- GROCERY ----------
+const AIS=[["🥫 Pantry & Sauces",/coconut|broth|sauce|oil|tahini|paste|syrup|dressing|olive|mayo|vinegar|yeast|seeds|agar|glaze|salt|spice|cashew|berbere|ras el|shito|miso|gochujang|curry|masala|tamarind|egusi|groundnut|peanut/],["🥩 Meat & Poultry",/chicken|beef|pork|lamb|turkey|bacon|goat|meat|sausage|ribs|liver|oxtail/],["🐟 Fish & Seafood",/salmon|shrimp|fish|tuna|tilapia|mackerel|sardine|crab|prawn|cod\b|crayfish|herring/],["🌱 Plant Proteins & Legumes",/tofu|tempeh|lentil|chickpea|(?<!green |french )bean|seitan|jackfruit|\bdal\b|black-eyed/],["🥚 Eggs & Dairy",/(?<!garden )\beggs?\b|milk|cheese|feta|yogurt|cream|crema|butter|hummus|paneer|ghee/],["🍞 Grains, Pasta & Bakery",/rice|quinoa|spaghetti|pasta|tortilla|bread|oat|flour|garri|gari|fufu|millet|teff|injera|couscous|noodle|semolina/],["🍎 Fruits",/mango|pineapple|orange|watermelon|papaya|apple|banana|lemon|lime|avocado|berries|grape|apricot|pear|peach/],["🥬 Vegetables",/./]];
+function gItems(){const m={};T.forEach(t=>(t.ing||[]).forEach(i=>{if(!GX.has(i))m[i]=(m[i]||0)+1}));EXTRA.forEach(i=>{if(!GX.has(i))m[i]=(m[i]||0)+1});return m}
+function gGroups(){const m=gItems(),g={};Object.keys(m).forEach(k=>{const a=catOf(k);(g[a]=g[a]||[]).push([k,m[k]])});return AIS.map(a=>a[0]).sort((x,y)=>ORD.indexOf(x.split(' ')[0])-ORD.indexOf(y.split(' ')[0])).filter(a=>g[a]).map(a=>[a,g[a].sort((x,y)=>x[0].localeCompare(y[0]))])}
+function tg(k){done.has(k)?done.delete(k):done.add(k);drawG()}
+function gText(){return gGroups().map(([a,l])=>a+"\n"+l.map(([k,c])=>`${done.has(k)?"[x]":"[ ]"} ${k}${c>1?" ×"+c:""}`).join("\n")).join("\n\n")}
+function drawG(){const g=gGroups(),n=g.reduce((a,x)=>a+x[1].length,0);
+ if(!n){$("#gout").innerHTML=`<div class="sf rounded-2xl p-10 text-center up"><div class="text-5xl mb-3">🛒</div><p class="mu">Your list is empty. Tap “＋ Add” on recipes or send adapted ingredients here.</p></div>`;return}
+ $("#gout").innerHTML=`<div class="flex flex-wrap gap-2 mb-4 items-center"><span class="mu text-sm mr-auto">${done.size} of ${n} checked</span><button class="btn bac" onclick="toNotes()">📱 Send to phone notes</button><button class="btn btn-o" onclick="sendMsg('mail')">✉️ Email</button><button class="btn btn-o" onclick="sendMsg('sms')">💬 Text</button><button class="btn btn-o" onclick="cp(gText())">📋 Copy</button><button class="btn btn-o" onclick="done.clear();drawG()">Uncheck all</button><button class="btn btn-o" onclick="clrG()">🗑 Clear cart</button></div><div class="grid gap-4">${g.map(([a,l],i)=>`<div class="sf rounded-2xl p-4 up" style="animation-delay:${i*60}ms"><h3 class="fd text-lg mb-2">${eh(a)}</h3>${l.map(([k,c])=>`<div class="flex items-center gap-3 py-1.5 ${done.has(k)?'dn':''}"><span class="gico">${E(gico(k))}</span><label class="flex items-center gap-2 flex-1 cursor-pointer"><input type="checkbox" class="ck" ${done.has(k)?'checked':''} onchange="tg(decodeURIComponent('${enc(k)}'))"><span>${esc(k)}${c>1?` <b class="ac">×${c}</b>`:''}</span></label><button class="text-lg px-1" aria-label="Change section" title="Change section" onclick="askCat(decodeURIComponent('${enc(k)}'))">✎</button><button class="text-xl px-2" aria-label="Remove item" onclick="rmG(decodeURIComponent('${enc(k)}'))">✕</button></div>`).join("")}</div>`).join("")}</div>`}
+function cp(t){const f=()=>{const a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();try{document.execCommand("copy");toast("Copied to clipboard")}catch(e){toast("Copy failed")}a.remove()};navigator.clipboard?navigator.clipboard.writeText(t).then(()=>toast("Copied to clipboard"),f):f()}
+// ---------- SHOP & PHONE NOTES ----------
+const STAPLES=["Spinach","Kale","Tomatoes","Onions","Garlic","Lemons","Avocados","Bananas","Sweet potatoes","Mushrooms","Tofu (extra-firm)","Tempeh","Lentils","Chickpeas (canned)","Black beans (canned)","Chicken breast","Salmon fillets","Ground beef","Shrimp","Eggs","Brown rice","Quinoa","Pasta","Whole-wheat tortillas","Rolled oats","Oat milk","Greek yogurt","Parmesan","Butter","Cashews","Olive oil","Soy sauce","Maple syrup","Tahini","Nutritional yeast","Vegetable broth","Plantain","Yam","Cassava","Okra","Garden eggs (African eggplant)","Scotch bonnet","Bitterleaf","Black-eyed peas","Egusi (melon seeds)","Palm oil","Garri","Fufu flour","Groundnuts (peanuts)","Smoked fish","Goat meat","Berbere spice","Injera","Couscous","Ras el hanout","Shito (pepper sauce)","Teff flour","Rice noodles","Basmati rice","Coconut milk","Curry paste","Lemongrass","Gochujang","Miso paste","Paneer","Yellow dal","Garam masala","Tamarind","Bok choy","Fresh ginger","Chicken thighs","Whole chicken","Chicken wings","Turkey breast","Beef steak","Minced beef","Beef ribs","Oxtail","Pork chops","Sausages","Lamb chops","Beef liver","Tilapia","Mackerel","Sardines","Tuna steak","Cod fillet","Crab","Prawns","Dried crayfish","Cabbage","Carrots","Cucumber","Green beans","Bell peppers","Eggplant","Pumpkin","Cauliflower","Broccoli","Zucchini","Lettuce","Kontomire (cocoyam leaves)","Beetroot","Sweet corn","Green peas","Leeks","Celery","Spring onions","Potatoes","Cocoyam","Mangoes","Pineapple","Oranges","Watermelon","Papaya","Apples","Limes"];
+function renderStaples(){const g={};STAPLES.forEach(s=>{const a=AIS.find(x=>x[1].test(s.toLowerCase()))[0];(g[a]=g[a]||[]).push(s)});
+ $("#staples").innerHTML=AIS.map(a=>a[0]).sort((x,y)=>ORD.indexOf(x.split(' ')[0])-ORD.indexOf(y.split(' ')[0])).filter(a=>g[a]).map(a=>`<div class="mb-3"><div class="text-xs font-semibold mu mb-1.5">${eh(a)}</div><div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2">${g[a].slice().sort((x,y)=>x.localeCompare(y)).map(s=>`<button class="tile" onclick="addG(decodeURIComponent('${enc(s)}'))"><span class="ti">${E(gico(s))}</span>${s}</button>`).join("")}</div></div>`).join("")}
+function addG(s){fly(window.event&&window.event.target);GX.delete(s);EXTRA.push(s);trk();gEvt('cart',1);toast("Added: "+s)}
+async function addMan(){const v=$("#gadd").value.trim();if(!v)return;$("#gadd").value="";addG(v);const l=v.toLowerCase();
+ if(AIS.slice(0,-1).some(x=>x[1].test(l))||GI2.some(x=>x[0].test(l)))return;
+ try{CAT[v]=await aiCat(v);trk();toast('🤖 Sorted into '+CAT[v].a.replace(/^\S+\s/,''))}catch(e){askCat(v)}}
+function addSel(){const a=[...document.querySelectorAll("#mbox .gi:checked")].map(x=>x.value);if(!a.length)return toast("Tick at least one ingredient");a.forEach(i=>GX.delete(i));EXTRA.push(...a);fly(window.event&&window.event.target);trk();gEvt('cart',a.length);toast(a.length+" items added to grocery list")}
+$("#gv").appendChild($("#av"));$("#av").classList.add("mb-5");
+function togA(){const on=$("#av").classList.toggle("hidden")===false;$("#asw").classList.toggle("on",on);$("#asw").setAttribute("aria-checked",on);if(on)drawA()}
+function sendMsg(k){const t="🛒 Grocery list\n\n"+gText(),b=encodeURIComponent(t),ios=/iPhone|iPad|iPod/.test(navigator.userAgent);
+ const u=k==="mail"?"mailto:?subject="+encodeURIComponent("Grocery list")+"&body="+b:"sms:"+(ios?"&":"?")+"body="+b;
+ cp(t);const a=document.createElement("a");a.href=u;a.target="_blank";a.rel="noopener";document.body.appendChild(a);a.click();a.remove();
+ setTimeout(()=>toast("List copied – paste it if your app didn’t open"),1900)}
+function speak(){const v=view(cur,sw);if(!window.speechSynthesis)return toast("Audio is not supported on this device");speechSynthesis.cancel();speechSynthesis.speak(new SpeechSynthesisUtterance(v.name+". "+v.steps.map((s,i)=>"Step "+(i+1)+". "+s).join(" ")))}
+$("#cu").onchange=e=>{S.cu=e.target.value;S.shown=24;drawRecipes()};
+const PE={'Crispy Tofu':'🍢','Lentil':'🫘','Chickpea':'🧆','Black Bean':'🫘','Smoky Tempeh':'🥜','BBQ Jackfruit':'🍈','Garlic Mushroom':'🍄','Grilled Chicken':'🍗','Seared Beef':'🥩','Grilled Salmon':'🐟','Garlic Shrimp':'🍤','Pulled Pork':'🥓','Jammy Egg':'🥚'},GA=['🥦','🍅','🥕','🌿','🍋','🌶️','🧄','🌽'];
+function gar(r){const a=r.x?['🌶️','🌿','🍋']:[PE[r.p.n]||'🥗',GA[r.id%8],GA[(r.id+3)%8]];return a.map(x=>`<i>${E(x)}</i>`).join('')}
+function fly(src){const c=$('#cart'),cr=c.getBoundingClientRect();c.classList.remove('bump');void c.offsetWidth;c.classList.add('bump');
+ if(matchMedia('(prefers-reduced-motion:reduce)').matches||document.documentElement.classList.contains('noanim')||!src||!src.getBoundingClientRect)return;
+ const sr=src.getBoundingClientRect(),sx=sr.left+sr.width/2,sy=sr.top+sr.height/2,dx=cr.left+cr.width/2-sx,dy=cr.top+cr.height/2-sy,E=['🥕','🍅','🥦','🧅','🍋','🌽','🥬','🍎'];
+ for(let i=0;i<3;i++){const e=document.createElement('div');e.textContent=E[Math.floor(Math.random()*E.length)];e.style.cssText='position:fixed;z-index:90;font-size:2.2rem;pointer-events:none;left:'+(sx-18)+'px;top:'+(sy-18)+'px';document.body.appendChild(e);
+  e.animate([{transform:'translate(0,0) scale(1.1)',opacity:1},{transform:`translate(${dx*.45}px,${dy*.45-100}px) scale(1.5) rotate(140deg)`,opacity:1,offset:.45},{transform:`translate(${dx}px,${dy}px) scale(.3) rotate(320deg)`,opacity:.3}],{duration:850,delay:i*130,easing:'cubic-bezier(.4,0,.2,1)',fill:'both'}).onfinish=()=>{e.remove();c.classList.remove('bump');void c.offsetWidth;c.classList.add('bump')}}}
+
+let GX=new Set();
+const GI2=[[/oat milk|soy milk|almond milk/,'🥛'],[/ginger/,'🫚'],[/bell pepper/,'🫑'],[/green pea/,'🌱'],[/maple/,'🍁'],[/cocoyam/,'🥔'],[/beetroot/,'🌱'],[/tuna|salmon|cod\b|tilapia|mackerel|sardine|herring|fish/,'🐟'],[/chop|oxtail|ribs|liver|steak|beef|goat|lamb/,'🥩'],[/parmesan|cheddar|mozzarella|feta/,'🧀'],[/masala|ras el|curry powder|spice|berbere/,'🧂'],[/quinoa/,'🌾'],[/green bean|french bean/,'🌱'],[/pumpkin/,'🎃'],[/mango/,'🥭'],[/pineapple/,'🍍'],[/orange/,'🍊'],[/watermelon/,'🍉'],[/papaya/,'🍈'],[/apple/,'🍎'],[/cauliflower/,'🥦'],[/zucchini|cucumber/,'🥒'],[/crab/,'🦀'],[/sausage/,'🌭'],[/turkey/,'🦃'],[/kontomire|leaves|lettuce|leek|celery/,'🥬'],[/beetroot|cocoyam/,'🍠'],[/eggplant|garden egg/,'🍆'],[/chicken/,'🍗'],[/beef|steak|goat|lamb|meat/,'🥩'],[/pork|bacon/,'🥓'],[/shrimp|prawn/,'🍤'],[/fish|salmon|tuna/,'🐟'],[/\beggs?\b/,'🥚'],[/tofu|paneer/,'🍢'],[/tempeh|peanut|groundnut|cashew|walnut|almond/,'🥜'],[/lentil|bean|chickpea|\bdal\b|black-eyed|peas/,'🫘'],[/noodle|ramen|pho/,'🍜'],[/pasta|spaghetti/,'🍝'],[/rice|couscous|quinoa|millet/,'🍚'],[/tortilla|injera|bread|flatbread|roti/,'🫓'],[/oat/,'🥣'],[/garri|gari|fufu|flour|teff/,'🌾'],[/coconut/,'🥥'],[/milk|yogurt/,'🥛'],[/cheese/,'🧀'],[/butter|ghee/,'🧈'],[/cream/,'🥛'],[/sweet potato|yam|cassava/,'🍠'],[/potato/,'🥔'],[/plantain|banana/,'🍌'],[/tomato|pico/,'🍅'],[/onion|scallion/,'🧅'],[/garlic/,'🧄'],[/ginger/,'🧅'],[/pepper|chili|scotch|berbere|cayenne|gochujang/,'🌶️'],[/spinach|kale|greens|lettuce|romaine|cabbage|bitterleaf|bok choy|slaw/,'🥬'],[/broccoli|sprout/,'🥦'],[/carrot/,'🥕'],[/avocado/,'🥑'],[/lemon|lime/,'🍋'],[/mushroom/,'🍄'],[/corn/,'🌽'],[/cucumber|okra/,'🥒'],[/apricot|prune|jackfruit|fruit/,'🍑'],[/olive/,'🫒'],[/oil/,'🫒'],[/honey|syrup/,'🍯'],[/broth|stock|soup/,'🍲'],[/soy|sauce|shito|miso|paste|tamarind|dressing/,'🥫'],[/lemongrass|basil|cilantro|herb|thyme|mint|parsley|masala|spice|ras el|curry|paprika|cumin/,'🌿'],[/tahini|seed|egusi|sesame/,'🌱'],[/yeast|salt/,'🧂']];
+const gico=k=>{const l=k.toLowerCase();if(CAT[k])return CAT[k].e||CAT[k].a.split(' ')[0];const m=GI2.find(x=>x[0].test(l));return m?m[1]:catOf(k).split(' ')[0]};
+function rmG(k){GX.add(k);EXTRA=EXTRA.filter(x=>x!==k);done.delete(k);trk();toast('Removed: '+k)}
+function clrG(){Object.keys(gItems()).forEach(k=>GX.add(k));EXTRA=[];done.clear();trk();toast('Cart cleared')}
+const ORD=['🥩','🐟','🥬','🍎','🌱','🥚','🍞','🥫'];
+function cartP(o){$('#cartp').style.transform=o?'none':'translateX(105%)';$('#cbg').classList.toggle('hidden',!o);document.body.style.overflow=o?'hidden':'';if(o){$('#sheet').classList.remove('open');drawG()}}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')cartP(0)});
+const CAT={},AISN=AIS.map(a=>a[0]);
+const catOf=k=>CAT[k]?CAT[k].a:AIS.find(x=>x[1].test(k.toLowerCase()))[0];
+async function aiCat(k){const sm=window.claude&&await claude.use('sample');if(!sm)throw 0;
+ const r=await sm.json('You sort grocery items into supermarket sections. Item: "'+k.replace(/["\\]/g,'')+'" (it may be misspelled, or a West African, Asian or other regional ingredient). Choose exactly one section from this list: '+JSON.stringify(AISN)+'. Reply ONLY with JSON: {"section":"<exact string from the list>","emoji":"<one emoji that best matches the item>"}',{modelTier:'quick'});
+ const a=AISN.find(x=>x===r.section);if(!a)throw 0;return{a,e:r.emoji}}
+function askCat(k){const o=document.createElement('div');o.style.cssText='position:fixed;inset:0;z-index:95;background:rgba(0,0,0,.55);display:grid;place-items:end center;padding:1rem';o.onclick=e=>{if(e.target===o)o.remove()};
+ o.innerHTML=`<div class="sf rounded-3xl p-5 w-full max-w-md"><h3 class="fd text-xl mb-1">Where does “${esc(k)}” belong?</h3><p class="mu text-sm mb-3">Pick its section so it is grouped correctly.</p><div class="grid grid-cols-2 gap-2">${AISN.map((a,i)=>`<button class="chip text-left" data-i="${i}">${eh(a)}</button>`).join('')}</div><button class="btn bac w-full mt-3" data-ai="1">🤖 Let AI decide</button></div>`;
+ o.querySelectorAll('[data-i]').forEach(b=>b.onclick=()=>{CAT[k]={a:AISN[+b.dataset.i]};o.remove();trk()});
+ o.querySelector('[data-ai]').onclick=async()=>{try{CAT[k]=await aiCat(k);o.remove();trk();toast('🤖 Sorted into '+CAT[k].a.replace(/^\S+\s/,''))}catch(e){toast('AI is not available here – please pick a section')}};
+ document.body.appendChild(o)}
+// ---------- SETTINGS ----------
+const ST={size:1,anim:1};
+function sv(){try{localStorage.setItem('nh',JSON.stringify({mode:document.documentElement.dataset.mode,size:ST.size,anim:ST.anim,G}))}catch(e){}}
+function setSize(n){ST.size=n;document.documentElement.style.fontSize=[100,112.5,131,150][n]+'%';$$('#szs button').forEach((b,i)=>b.classList.toggle('on',i===n));sv()}
+function setAnim(a){ST.anim=a?1:0;document.documentElement.classList.toggle('noanim',!a);$('#anim').classList.toggle('on',!!a);sv()}
+function setGoal(k,v){const n=+v;if(n>0){G[k]=n;trk();sv()}}
+function pickDiet(d){$('#diets button[data-d="'+d+'"]').click();$$('#sdiet button').forEach(b=>b.classList.toggle('on',b.dataset.d===d))}
+function setP(o){$('#setp').style.transform=o?'none':'translateX(-105%)';$('#sbg').classList.toggle('hidden',!o);if(o)$$('#sdiet button').forEach(b=>b.classList.toggle('on',b.dataset.d===S.diet))}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')setP(0)});
+function loadS(){let s={};try{s=JSON.parse(localStorage.getItem('nh')||'{}')}catch(e){}
+ setMode(s.mode||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));setSize(s.size==null?1:s.size);setAnim(s.anim==null?1:s.anim);if(s.G)Object.assign(G,s.G);['k','p','c','f'].forEach(k=>{const e=$('#g_'+k);if(e)e.value=G[k]})}
+function resetS(){try{localStorage.removeItem('nh')}catch(e){}Object.assign(G,{k:2000,p:130,c:230,f:70});loadS();trk();toast('Settings reset')}
+const IOS=/iPhone|iPad|iPod/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+if(IOS)document.documentElement.classList.add('ios');
+function setGlass(a){document.documentElement.classList.toggle('glass',!!a)}
+setGlass(IOS);
+const FISH='<img class="fi" alt="fish" src="data:image/png;base64,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">';
+const E=e=>e==='🐟'?FISH:e,eh=t=>t.replace('🐟',FISH);
+// ---------- STREAK GAME ----------
+const GS={streak:0,best:0,last:'',xp:0,ach:[],day:'',q:{meals:0,work:0},d:{},tm:0,tw:0,vm:0,ci:0,cu:[]};
+try{Object.assign(GS,JSON.parse(localStorage.getItem('nhgame')||'{}'))}catch(e){}
+const tdy=()=>new Date().toLocaleDateString('en-CA'),ydy=()=>new Date(Date.now()-864e5).toLocaleDateString('en-CA');
+const live=()=>GS.last===tdy()||GS.last===ydy()?GS.streak:0;
+const ACH=[{id:'first',e:'🍽️',n:'First Bite',d:'Log a meal',t:()=>GS.tm>=1},{id:'m10',e:'👨‍🍳',n:'Meal Master',d:'Log 10 meals',t:()=>GS.tm>=10},{id:'w1',e:'👟',n:'Gym Starter',d:'Log a workout',t:()=>GS.tw>=1},{id:'w10',e:'🏋️',n:'Workout Hero',d:'Log 10 workouts',t:()=>GS.tw>=10},{id:'s3',e:'🔥',n:'On Fire',d:'3-day streak',t:()=>GS.streak>=3},{id:'s7',e:'⚔️',n:'Week Warrior',d:'7-day streak',t:()=>GS.streak>=7},{id:'s30',e:'👑',n:'Unstoppable',d:'30-day streak',t:()=>GS.streak>=30},{id:'vd',e:'🌱',n:'Plant Power',d:'Log 5 vegan meals',t:()=>GS.vm>=5},{id:'ex',e:'🌍',n:'World Explorer',d:'Log African and Asian dishes',t:()=>GS.cu.length>=2},{id:'cart',e:'🛒',n:'Grocery Pro',d:'Add 10 items to cart',t:()=>GS.ci>=10},{id:'q3',e:'🌟',n:'Perfect Day',d:'Finish all 3 daily quests',t:()=>GS.d.meals&&GS.d.work&&GS.d.prot}];
+function roll(){if(GS.day!==tdy()){GS.day=tdy();GS.q={meals:0,work:0};GS.d={}}}
+function gsave(){try{localStorage.setItem('nhgame',JSON.stringify(GS))}catch(e){}}
+function gui(){const s=$('#stk');if(s)s.textContent=live();if($('#gmp'))game()}
+function confetti(n=40){if(matchMedia('(prefers-reduced-motion:reduce)').matches||document.documentElement.classList.contains('noanim'))return;const C=['#10b981','#f59e0b','#ec4899','#6366f1','#ef4444','#06b6d4'];
+ for(let i=0;i<n;i++){const e=document.createElement('i'),s=6+Math.random()*8,a=Math.random()*Math.PI*2,v=120+Math.random()*260;e.style.cssText=`position:fixed;z-index:130;left:50%;top:30%;width:${s}px;height:${s*1.6}px;background:${C[i%6]};border-radius:2px;pointer-events:none`;document.body.appendChild(e);
+  e.animate([{transform:'translate(0,0) rotate(0deg)',opacity:1},{transform:`translate(${Math.cos(a)*v}px,${Math.sin(a)*v-120}px) rotate(${Math.random()*540}deg)`,opacity:1,offset:.45},{transform:`translate(${Math.cos(a)*v*1.2}px,${Math.sin(a)*v+420}px) rotate(900deg)`,opacity:0}],{duration:1600+Math.random()*700,easing:'cubic-bezier(.2,.7,.4,1)'}).onfinish=()=>e.remove()}}
+function celebrate(e,t,n){const b=document.createElement('div');b.className='sf';b.style.cssText='position:fixed;z-index:131;left:50%;top:calc(1rem + env(safe-area-inset-top,0px));transform:translateX(-50%);padding:.9rem 1.4rem;border-radius:1.4rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 18px 40px -10px rgba(0,0,0,.5);border:2px solid var(--ac);max-width:92vw';
+ b.innerHTML=`<span style='font-size:2.6rem;display:inline-block'>${e}</span><div><div class='mu text-xs font-semibold uppercase'>${t}</div><div class='fd text-xl'>${n}</div></div>`;document.body.appendChild(b);
+ if(!document.documentElement.classList.contains('noanim')){b.animate([{transform:'translate(-50%,-160%)'},{transform:'translate(-50%,14%)',offset:.6},{transform:'translate(-50%,0)'}],{duration:650,easing:'ease-out'});b.firstChild.animate([{transform:'scale(.4) rotate(-30deg)'},{transform:'scale(1.35) rotate(12deg)',offset:.6},{transform:'scale(1) rotate(0)'}],{duration:900,delay:250,easing:'ease-out',fill:'backwards'})}
+ confetti();setTimeout(()=>b.remove(),3400)}
+function unl(id){const a=ACH.find(x=>x.id===id);GS.ach.push(id);GS.xp+=50;celebrate(a.e,'Achievement unlocked',a.n)}
+function chk(){const pr=T.reduce((a,x)=>a+x.p,0);
+ [['meals','Log 3 meals',GS.q.meals>=3,30],['work','Log a workout',GS.q.work>=1,20],['prot','Reach 80% of your protein goal',pr>=G.p*.8,30]].forEach(([k,l,ok,xp])=>{if(ok&&!GS.d[k]){GS.d[k]=1;GS.xp+=xp;toast('✅ Quest done: '+l+' +'+xp+' XP')}});
+ ACH.forEach(a=>{if(!GS.ach.includes(a.id)&&a.t())unl(a.id)});gsave();gui()}
+function gEvt(t,v){roll();const n=tdy();
+ if(GS.last!==n){GS.streak=GS.last===ydy()?GS.streak+1:1;GS.last=n;GS.best=Math.max(GS.best,GS.streak);toast('🔥 Day '+GS.streak+' streak!')}
+ if(t==='meal'){GS.tm++;GS.q.meals++;if(v.vegan)GS.vm++;if((v.cu==='African'||v.cu==='Asian')&&!GS.cu.includes(v.cu))GS.cu.push(v.cu);toast('Added: '+v.name)}
+ if(t==='work')GS.q.work++,GS.tw++;if(t==='cart')GS.ci+=v;chk()}
+function game(){roll();const old=$('#gmp');if(old)old.remove();const lv=Math.floor(GS.xp/100)+1,pc=GS.xp%100,pr=T.reduce((a,x)=>a+x.p,0);
+ const Q=[['🍽️ Log 3 meals',Math.min(GS.q.meals,3)+'/3',GS.d.meals,30],['🏋️ Log a workout',Math.min(GS.q.work,1)+'/1',GS.d.work,20],['💪 Reach 80% of your protein goal',Math.min(100,Math.round(pr/(G.p*.8)*100))+'%',GS.d.prot,30]];
+ const o=document.createElement('div');o.id='gmp';o.style.cssText='position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.6);overflow:auto;padding:1rem;display:grid;place-items:center';o.onclick=e=>{if(e.target===o)o.remove()};
+ o.innerHTML=`<div class='sf rounded-3xl p-5 w-full max-w-lg my-auto'><div class='flex justify-between items-center mb-3'><h2 class='fd text-2xl'>🏆 Your Streak</h2><button class='text-3xl px-2' aria-label='Close' onclick="this.closest('#gmp').remove()">✕</button></div>
+ <div class='soft rounded-2xl p-4 text-center'><div style='font-size:4rem;display:inline-block;cursor:pointer;animation:float 1.6s ease-in-out infinite' onclick='confetti()'>🔥</div><div class='fd text-5xl'>${live()}</div><div class='mu'>day streak · best ${GS.best} · tap the flame!</div></div>
+ <div class='mt-4'><div class='flex justify-between text-sm mb-1'><b>Level ${lv}</b><span class='mu'>${pc}/100 XP</span></div><div class='bar'><i style='width:${pc}%'></i></div></div>
+ <h3 class='fd text-lg mt-5 mb-1'>Today’s quests</h3>${Q.map(q=>`<div class='flex justify-between items-center py-1.5 gap-2'><span>${q[2]?'✅':'⬜'} ${q[0]}</span><span class='mu text-sm whitespace-nowrap'>${q[1]} · +${q[3]} XP</span></div>`).join('')}
+ <h3 class='fd text-lg mt-5 mb-2'>Achievements (${GS.ach.length}/${ACH.length})</h3><div class='grid grid-cols-3 gap-2'>${ACH.map(a=>{const h=GS.ach.includes(a.id);return `<div class='tile' style='opacity:${h?1:.45}'><span class='ti'>${h?a.e:'🔒'}</span><b>${a.n}</b><small class='mu'>${a.d}</small></div>`}).join('')}</div></div>`;document.body.appendChild(o)}
+roll();gui();
+setTimeout(()=>{const s=$('#splash');if(s){s.classList.add('out');setTimeout(()=>s.remove(),600)}},1700);$('#splash').onclick=()=>{$('#splash').classList.add('out')};
+function toNotes(){const t="🛒 Grocery list\n\n"+gText();
+ if(navigator.share)navigator.share({title:"Grocery list",text:t}).catch(e=>{if(e.name!=="AbortError")cp(t)});else cp(t)}
+renderStaples();
+// ---------- LIGHT / DARK ----------
+function setMode(m){document.documentElement.dataset.mode=m;const e=$("#mode");if(e)e.classList.toggle("on",m==="dark");sv()}
+$("#mode").onclick=()=>setMode(document.documentElement.dataset.mode==="dark"?"light":"dark");
+// ---------- EVENTS ----------
+$("#tabs").onclick=e=>{const b=e.target.closest("button");if(!b)return;S.tab=b.dataset.t;$$("#tabs button").forEach(x=>x.classList.toggle("on",x===b));tab()};
+$("#diets").onclick=e=>{const b=e.target.closest("button");if(!b)return;S.diet=b.dataset.d;S.shown=24;$$("#diets button").forEach(x=>x.classList.toggle("on",x===b));document.documentElement.dataset.theme=S.diet;S.tab==="r"?drawRecipes():0};
+let _qt;$("#q").oninput=e=>{clearTimeout(_qt);const v=e.target.value;_qt=setTimeout(()=>{S.q=v;S.shown=24;drawRecipes()},140)};
+$("#tag").onchange=e=>{S.tag=e.target.value;S.shown=24;drawRecipes()};
+$("#sort").onchange=e=>{S.sort=e.target.value;drawRecipes()};
+$("#chips").onclick=e=>{const b=e.target.closest("button");if(!b)return;S[b.dataset.c]^=1;b.classList.toggle("on");S.shown=24;drawRecipes()};
+$("#more").onclick=()=>{S.shown+=24;drawRecipes()};
+$("#eq").oninput=e=>{S.eq=e.target.value;drawEx()};
+$("#lv").onchange=e=>{S.lv=e.target.value;drawEx()};
+$("#eqp").onchange=e=>{S.eqp=e.target.value;drawEx()};
+$("#gch").innerHTML=`<button class="chip on" data-g="">All</button>`+GROUPS.map(g=>`<button class="chip" data-g="${g}">${GI[g]} ${g}</button>`).join("");
+$("#gch").onclick=e=>{const b=e.target.closest("button");if(!b)return;S.g=b.dataset.g;$$("#gch button").forEach(x=>x.classList.toggle("on",x===b));drawEx()};
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeM()});
+loadS();tab();trk();
+</script>
+<script>if('serviceWorker' in navigator&&location.protocol.indexOf('http')===0)navigator.serviceWorker.register('sw.js').catch(()=>{})</script></body>
+</html>
